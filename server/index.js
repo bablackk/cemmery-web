@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const authRoute = require("./routes/auth.route");
 const productRoute = require("./routes/admin/product.route");
+
 const app = express();
 
 //middleware
@@ -23,7 +24,7 @@ mongoose.connect(URI_MONGODB, async () => {
 // Route
 app.use("/api/auth", authRoute);
 app.use("/api/admin", productRoute);
-
+// connect server
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);
 });

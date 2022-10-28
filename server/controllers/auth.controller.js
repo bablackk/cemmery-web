@@ -37,6 +37,7 @@ const authController = {
       }
       if (email && validPassword) {
         return res.status(200).json(email);
+
       }
     } catch (error) {
       res.status(500).json(error);
