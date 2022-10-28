@@ -25,19 +25,19 @@ const authController = {
   loginUser: async (req, res) => {
     try {
       const email = await User.findOne({ email: req.body.email });
-      console.log(email);
       if (!email) {
-        res.status(404).json("Wrong email");
+        return res.status(404).json("Wrong email");
       }
       const validPassword = await bcrypt.compare(
         req.body.password,
         email.password
       );
       if (!validPassword) {
-        res.status(404).json("Wrong password");
+        return res.status(404).json("Wrong password");
       }
       if (email && validPassword) {
-        res.status(200).json(email);
+        return res.status(200).json(email);
+
       }
     } catch (error) {
       res.status(500).json(error);
