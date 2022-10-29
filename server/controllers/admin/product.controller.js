@@ -8,6 +8,7 @@ const productController = {
         productName: req.body.productName,
         price: req.body.price,
         thumbnail: req.body.thumbnail,
+        thumbnailAfter: req.body.thumbnailAfter,
         size: req.body.size,
         description: req.body.description,
       });
@@ -21,7 +22,9 @@ const productController = {
   getAllProduct: async (req, res) => {
     try {
       const allProduct = await Product.find();
-      return res.status(200).json(allProduct);
+      return res
+        .status(200)
+        .json({ status: "success", result: allProduct.length, allProduct });
     } catch (error) {
       return res.status(500).json(error);
     }

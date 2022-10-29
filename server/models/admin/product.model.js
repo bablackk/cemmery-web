@@ -16,6 +16,9 @@ const productSchema = new mongoose.Schema(
     thumbnail: {
       type: String,
     },
+    thumbnailAfter: {
+      type: String,
+    },
     size: {
       type: String,
       require: true,
