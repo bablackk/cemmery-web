@@ -19,12 +19,20 @@ const productController = {
       res.status(404).json(error);
     }
   },
-  getAllProduct: async (req, res) => {
+  getAllProducts: async (req, res) => {
     try {
       const allProduct = await Product.find();
       return res
         .status(200)
         .json({ status: "success", result: allProduct.length, allProduct });
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  },
+  getProduct: async (req, res) => {
+    try {
+      const product = await Product.findById(req.params.id);
+      return res.status(200).json({ status: "success", product });
     } catch (error) {
       return res.status(500).json(error);
     }

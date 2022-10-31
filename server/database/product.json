@@ -1,0 +1,401 @@
+[{
+  "_id": {
+    "$oid": "635c0a601410220454a269a5"
+  },
+  "productName": "SHINE TEE #Brown",
+  "price": 120000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy-100__1__c60967352fe84637bd33db47b7b6a02c_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1-100__1__07cae2450e7b40339ac402dbca435e10_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269a6"
+  },
+  "productName": "SHINE TEE #Begie",
+  "price": 120000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/1607625ace4d0b13525c_60cf989cdef94250bca5364937c5450a_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/d9b9a8e404f3c1ad98e2_a1466f548ae8482099d7860af38a08f0_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269a7"
+  },
+  "productName": "SHINE TEE #Green",
+  "price": 120000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_3-100_7a486dff2d8f409f9c4ec30bac32152e_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_2-100_b61ca1c2503b4636add4a3850293e9b5_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269a8"
+  },
+  "productName": "SIGNATURE POLO #Black",
+  "price": 150000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_3_copy_3-100_3f75a13c17e14bf6b6fee1f8832e738f_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_3-100_5355585976454e0b9e9b388e400bc5d0_master.jpg",
+  "size": "L",
+  "description": "đây là áo polo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269a9"
+  },
+  "productName": "SIGNATURE POLO #Brown",
+  "price": 150000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_3_copy_5_2x-100_1a427f812af040b08088a2b712b2797a_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_3_copy_2_2x-100_ceca56e23678473cbbb16028a4a700f4_master.jpg",
+  "size": "L",
+  "description": "đây là áo polo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269aa"
+  },
+  "productName": "SIGNATURE POLO #Gray",
+  "price": 150000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_2_copy-100_fa8bd0a1834f461c9908d8d67bf74292_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_2-100_c18d3f23361b489e966403fa7a94d0f9_master.jpg",
+  "size": "L",
+  "description": "đây là áo polo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ab"
+  },
+  "productName": "SIGNATURE POLO #Green",
+  "price": 150000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_3_copy_4_2x-100_ec0da609ac2c49c0819a66912a42ed6c_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_3_copy_2x-100_4f454fb927c3475c9b3161fc07898f23_master.jpg",
+  "size": "L",
+  "description": "đây là áo polo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ac"
+  },
+  "productName": "ANTIQUE TEE #Black",
+  "price": 99000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/30c006b5aa0f6a51331e_8d41b19026b84da6b5149c2e4b61ffa1_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/6bafe9573cedfcb3a5fc_cb514a1081e84b89b5028326a6376f8e_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ad"
+  },
+  "productName": "ANTIQUE TEE #Green",
+  "price": 99000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/e1170179adc36d9d34d2_d27fb51f3792436ba62899b5ae883c5f_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/6f8adb4e71f4b1aae8e5_2a7588d562094e18b4ba4c64ff6d9e6a_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ae"
+  },
+  "productName": "ANTIQUE TEE #Blue",
+  "price": 99000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/d49e2df4814e4110185f_4d4a93db457b4e7b829de1a378eac0b0_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/285823042_1738379729843740_4313377861984312943_n_8782093b10874c8589b001ad4bbf21d9_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269af"
+  },
+  "productName": "ANTIQUE TEE #Brown",
+  "price": 99000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/9fdea2960e2cce72973d_5c87df327fb14992bd02ff09dd27b16f_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/1cf5981a32a0f2feabb1_6a8911e60ab6465ca57661b9ee107a7b_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b0"
+  },
+  "productName": "TOTE BAG",
+  "price": 49000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/tote1_1d138e6e03694051b7f01c804a4a7aa3_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/tote4_382441c8815b4e70b48301660de243c4_master.jpg",
+  "size": "L",
+  "description": "đây là túi tote đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b1"
+  },
+  "productName": "ESSENTIAL SLIPPERS #Grey",
+  "price": 89000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_12_c234e654b7ce4349996888399244d63f_grande.png",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/ban_sao_cua_dep12_c3f37fc4207948438e5a9fed578081bb_master.jpg",
+  "size": "L",
+  "description": "đây là dép đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b2"
+  },
+  "productName": "ESSENTIAL SLIPPERS #Green",
+  "price": 89000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_9_db732c173303468fb63e7cde332b6197_grande.png",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/ban_sao_cua_dep18_7178029d57ac412184ed4ad66067f9e7_master.jpg",
+  "size": "L",
+  "description": "đây là dép đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b3"
+  },
+  "productName": "ESSENTIAL SLIPPERS #Black",
+  "price": 89000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_15_b136dd0225f84dca9baf4e0e11e6d9c6_grande.png",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/ban_sao_cua_dep4_56807e591a4c4f00a22b4c1cbcd5132d_master.jpg",
+  "size": "L",
+  "description": "đây là đép đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b4"
+  },
+  "productName": "HUSTLE CAP #Green",
+  "price": 79000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/99dbf2a5df501a0e43414_a7cf868ceec242c08dd00e6b81db0d7e_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_4-100_e39a1b98c14f49998da31834655af827_master.jpg",
+  "size": "L",
+  "description": "đây là nón đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b5"
+  },
+  "productName": "HUSTLE CAP #Grey",
+  "price": 79000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/effde9b0c445011b58541_f5b3c1c73f2249e0838d9318a18a722e_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_7-100_7b2aff459bb14bd79df5e5a3a22dc877_master.jpg",
+  "size": "L",
+  "description": "đây là nón đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b6"
+  },
+  "productName": "HUSTLE CAP #Brown",
+  "price": 79000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_2-100_2c579d53ff2843d886e6a5199a7d1ade_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy-100_bc7968caa86c4638916e6e62f62b48e5_master.jpg",
+  "size": "L",
+  "description": "đây là nón đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b7"
+  },
+  "productName": "HUSTLE CAP #Black",
+  "price": 79000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/0cc4a7b68a434f1d16522_30119c3c419b4d6f8b60c9fd8bdecb86_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_10-100_740a5b0249924b1b9705b4de57e267dc_master.jpg",
+  "size": "L",
+  "description": "đây là nón đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b8"
+  },
+  "productName": "SCHOOL PACK #White",
+  "price": 299000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy-100_363fb29b8f324568ace7b21b256da8a2_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_3-100_0e8f4644fd9f4006b16f5c16a20e1625_master.jpg",
+  "size": "L",
+  "description": "đây là balo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269b9"
+  },
+  "productName": "SCHOOL PACK #Black",
+  "price": 299000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_5-100_2b7eab4767434dd5abd06ee3e1a0f564_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_7-100_9acaaa43a676434690122c3018b48ae0_master.jpg",
+  "size": "L",
+  "description": "đây là balo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ba"
+  },
+  "productName": "SCHOOL PACK #Green",
+  "price": 299000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_9-100_051523e9f5da447db934a428eadee945_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_10-100_999eff68ac28449cbfd6c490a209380c_master.jpg",
+  "size": "L",
+  "description": "đây là balo đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269bb"
+  },
+  "productName": "BAD BEHAVIORS SHIRT #Grey",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_13-100_3d8926987907461f9c6e6c7e212605ca_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_10-100_3d1644718dee4197b40eb6ae63eb6645_master.jpg",
+  "size": "L",
+  "description": "đây là áo sơ mi đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269bc"
+  },
+  "productName": "BAD BEHAVIORS SHIRT #Brown",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_12-100_645858f8918b4f60914c023bdd709b84_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_9-100_d19a7ef885c74f6f866addc5a2595ad9_master.jpg",
+  "size": "L",
+  "description": "đây là áo sơ mi đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269bd"
+  },
+  "productName": "BAD BEHAVIORS SHIRT #Green",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_11-100_793f29a63553471c952f7b9af956692a_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_8-100_4cd4bd9e84284dcfbb748bb698d751b8_master.jpg",
+  "size": "L",
+  "description": "đây là áo sơ mi đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269be"
+  },
+  "productName": "VITAL SHORT #Begie",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/0e342af40611c54f9c00_0f47a330b4584b209a6b51d25f9abd7a_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7392-min_71e314d67ee541c3997085ea4e5faad0_master.jpg",
+  "size": "L",
+  "description": "đây là quần short đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269bf"
+  },
+  "productName": "VITAL SHORT #Brown",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/a621a7148bf148af11e0_22942612d91a4568b7897d7693f5868b_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7408-min_743ddb85e5d44f749a512070e367b5c3_master.jpg",
+  "size": "L",
+  "description": "đây là quần short đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c0"
+  },
+  "productName": "VITAL SHORT #Grey",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/f3da12033ee6fdb8a4f7_9fb8825766cc4dc58f9fc130d299e928_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7417-min_4cdcf1b8b1c94fc5a11a7f8ebc0a367b_master.jpg",
+  "size": "L",
+  "description": "đây là quần short đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c1"
+  },
+  "productName": "VITAL SHORT #Green",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/be4e9387bf627c3c2573_dad48aeb52f140f499efb30e38fa87dd_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7405-min_85f70d15707f45aa8aa397b36142ee39_master.jpg",
+  "size": "L",
+  "description": "đây là quần short đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c2"
+  },
+  "productName": "VITAL SHORT #Black",
+  "price": 129000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/1558e69cca7909275068_1d522d10b6eb47aab8e89777fdef4d0e_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7414-min_c56db34c223d4acfa69cdd6d051cf29d_master.jpg",
+  "size": "L",
+  "description": "đây là quần short đẹp"
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c3"
+  },
+  "productName": "RETRO POLO #Green",
+  "price": 149000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/fec67e13cb0c0b52521d_337d0ddc4e254f96b318ac0159840aa7_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/da80e653534c9312ca5d_eee9ce0f9b9e459bba39a2e6e955febd_master.jpg",
+  "size": "L",
+  "description": "đây là áo thun polo cổ khác màu"
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c4"
+  },
+  "productName": "RETRO POLO #Begie",
+  "price": 149000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/02d18d2b3834f86aa125_5304ee1ce5c14487be044ce95df61ec4_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/image_556e9b87720941029974d7002e111e74_master.png",
+  "size": "L",
+  "description": "đây là áo thun polo cổ khác màu"
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c5"
+  },
+  "productName": "BROKEN VARSITY #Green",
+  "price": 239000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_2_6x-100_72de5786cc704bffa0829e011b3049cf_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_6x-100_3f8bd4b8b81b4fcc8a8f214f3f2944cb_master.jpg",
+  "size": "L",
+  "description": "đây là áo khoác thời trang "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c6"
+  },
+  "productName": "BROKEN VARSITY #Brown",
+  "price": 239000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/artboard_1_copy_3_6x-100_8687eb3d93a24cdb8e2fc8d8e4cabca4_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_6x-100_3f581e37087e4ffea7cd886a7595cff4_master.jpg",
+  "size": "L",
+  "description": "đây là áo khoác thời trang "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c7"
+  },
+  "productName": "BROKEN VARSITY #Black",
+  "price": 239000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/f9ad0034-2b80-43ed-b48a-29478714ed17_163f9a830f9547bfb412b9afa1923663_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/artboard_1_copy_22_6x-100_1d4ec3abac994bdbabc8eec74e800c74_master.jpg",
+  "size": "L",
+  "description": "đây là áo khoác thời trang"
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c8"
+  },
+  "productName": "INDENTIFY SWEATER #Caramel ",
+  "price": 189000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/_stu8609_e3eb73306e1d4ca388b19c5a36e0a430_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu8615_79c481fc66374084925ebd91b92fb738_master.jpg",
+  "size": "L",
+  "description": "đây là áo sweater đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269c9"
+  },
+  "productName": "INDENTIFY SWEATER #Grey ",
+  "price": 189000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/_stu8618_835e943d7d6041f1adefbf5d913318d3_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu8622_d257ca1065354990a70b5a20e11ad758_master.jpg",
+  "size": "L",
+  "description": "đây là áo sweater đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269ca"
+  },
+  "productName": "INDENTIFY SWEATER #Black ",
+  "price": 189000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/_stu8630_7d21989c897d496c8546ce364f52fa48_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu8633_5e9b13561e9d4be5b0994ab45cde0822_master.jpg",
+  "size": "L",
+  "description": "đây là áo sweater đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269cb"
+  },
+  "productName": "INDENTIFY SWEATER #White",
+  "price": 189000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/_stu7859_239b8a678be542dcabf65ac0af08ae94_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7862_831de2f77eee4b5398c3c0255f4cd5c1_master.jpg",
+  "size": "L",
+  "description": "đây là áo sweater đẹp "
+},{
+  "_id": {
+    "$oid": "635c0a601410220454a269cc"
+  },
+  "productName": "INDENTIFY SWEATER #Pink",
+  "price": 189000,
+  "thumbnail": "https://product.hstatic.net/200000259629/product/_stu7864-compressed_952dc91afd1b4ef0b62327631db4be46_grande.jpg",
+  "thumbnailAfter": "https://product.hstatic.net/200000259629/product/_stu7866-compressed_180b72bf74fa45f6a61ac521308c9f7d_master.jpg",
+  "size": "L",
+  "description": "đây là áo sweater đẹp "
+}]

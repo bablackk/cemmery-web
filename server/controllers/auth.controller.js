@@ -36,8 +36,8 @@ const authController = {
         return res.status(404).json("Wrong password");
       }
       if (email && validPassword) {
-        return res.status(200).json(email);
-
+        const { password, ...others } = email._doc;
+        return res.status(200).json(others);
       }
     } catch (error) {
       res.status(500).json(error);
