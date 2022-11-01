@@ -10,6 +10,7 @@ const BodyParser = require("body-parser");
 const authRoute = require("./routes/auth.route");
 const productRoute = require("./routes/admin/product.route");
 const userRoute = require("./routes/admin/user.route");
+const viewRoute = require("./routes/view/view.route");
 const app = express();
 
 //middleware
@@ -23,19 +24,17 @@ app.use(express.json());
 
 //TEMPLATE ENGINE
 app.set("view engine", "pug");
-// static files
-app.set("/public", path.join(__dirname, "public"));
 app.set("views", path.join(__dirname, "./views"));
+// static files
+app.use(express.static(path.join(__dirname, "public")));
 
 // connect to DB
 mongoose.connect(URI_MONGODB, async () => {
   await console.log("DB connected");
 });
 
-app.get("/", (req, res) => {
-  res.status(200).render("base");
-});
-// Route
+// Route\
+app.use("/", viewRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/admin", productRoute);
 app.use("/api/admin", userRoute);
