@@ -1,1 +1,88 @@
-h1 header
+.notify
+    span Miễn phí vận chuyển cho đơn hàng trên 500k
+.home-Layout
+    .header
+        .hidden-nav
+            label.menu-icon(for='nav_mobile-input')
+                svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 448 512')
+                    path(d='M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z')
+            input#nav_mobile-input.nav-input(type='checkbox' name='')
+            label.nav-overlay(for='nav_mobile-input')
+            nav.nav-mobile
+                label.nav-close(for='nav_mobile-input')
+                    svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 448 512')
+                        path(d='M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm79 143c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z')
+                ul.nav_mobile-list
+                    li
+                        a.nav_mobile-link(href='') Home
+                    li
+                        a.nav_mobile-link(href='') Shop
+                    li
+                        a.nav_mobile-link(href='') Signature
+                    li
+                        a.nav_mobile-link(href='') Shoppe
+                    li
+                        a.nav_mobile-link(href='') Cart
+        .header_upper
+            img.header_logo(src='https://vcdn1-dulich.vnecdn.net/2022/05/27/du-lich-Viet-Nam-3-1653637304.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=JTkFADdHoPj9uPujAqAv0w' alt='')
+            .hidden_header_login-cart
+                .header_login
+                    .header_login_login-icon
+                        i.bi.bi-box-arrow-in-right
+                        a.login
+                            a(href='../login/login.html') Đăng nhập /
+                            a(href='../register/home.html') Đăng kí
+                        .header_login_login-text
+                .header_cart
+                    a(href='')
+                        i.bi.bi-cart-plus
+                        span Giỏ hàng
+            .header_search-box
+                form.header_search-box_container
+                    input.header_input(type='text' placeholder='Tìm kiếm sản phẩm...')
+                    button.header_input(type='submit')
+                        i.bi.bi-search
+            .header_hotline
+                i.bi.bi-telephone-plus-fill
+                span(style='color  :black;font-size: 16px;') Hotline:
+                span(style='font-size: 16px;')  0123456789
+        // nav
+        .header-lower
+            #i-nav.navbar
+                .nav
+                    nav
+                        ul
+                            li
+                                a.nav-item(href='../landingpage/Home.html') HOME
+                            li
+                                a.nav-item(href='#') SHOP
+                                ul
+                                    li
+                                        a.dropdown-item(href='#') TOP
+                                    li
+                                        a.dropdown-item(href='#') BOTTOM
+                                    li
+                                        a.dropdown-item(href='#') OUTERWEAR
+                                    li
+                                        a.dropdown-item(href='#') BAG
+                                    li
+                                        a.dropdown-item(href='#') DEAL 99k/119k
+                            li
+                                a.nav-item(href='#') SIGNATURE
+                            li
+                                a.nav-item(href='#') KÊNH SHOPPE
+                            li
+                                a.nav-item(href='#') KIỂM TRA ĐƠN HÀNG
+                                    i.bi.bi-check2-circle
+                .header_login-cart
+                    .header_login
+                        .header_login_login-icon
+                            i.bi.bi-box-arrow-in-right
+                            a.login(href='../')
+                                a(style='font-size: 16px;' href='../login/login.html') Đăng nhập /
+                                a(style='font-size: 16px;' href='../register/home.html')  Đăng ký
+                            .header_login_login-text
+                    .header_cart
+                        a(href='')
+                            i.bi.bi-cart-plus
+                            span(style='font-size: 14px;') Giỏ Hàng

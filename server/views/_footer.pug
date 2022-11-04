@@ -1,1 +1,38 @@
-h1 footer
+.footer
+    .footer1
+        h3 Giới thiệu
+        span DPQL là thương hiệu đặt chất lượng lên hàng đầu
+    .footer2
+        h1 Thông tin liên hệ
+        span
+            i.bi.bi-geo-alt
+            | 123 Đường Trần Duy Hưng Hà Nội
+        span
+            i.bi.bi-phone-fill
+            |  0123456789
+        span
+            i.bi.bi-envelope-open-fill
+            |  DPQL.contact@gmail.com
+    .footer3
+        iframe(src='https://www.youtube.com/embed/ZqDBgYPpUTg' width='380px' height='240px' frameborder='0')
+.author
+    h5(style='text-align : center')
+        i.bi.bi-check-circle-fill
+        span  Coppyright 2022 DPQL.
+        span
+            | Powered by
+            strong  DPQL Team
+.back-to-top-btn
+    a#to-top(href='#scroll')
+        i.bi.bi-caret-up-square
+script.
+    window.onscroll = function () { myFunction() };
+    let navbar = document.getElementById("i-nav");
+    let sticky = navbar.offsetTop;
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }

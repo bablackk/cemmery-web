@@ -12,7 +12,7 @@ module.exports = {
   getUser: async (req, res) => {
     try {
       const user = await User.findById(req.params.id);
-      return res.status(200).json({ status: "Get Users success", user });
+      return res.status(200).json({ status: "Get User success", user });
     } catch (error) {
       return res.status(500).json(error);
     }
