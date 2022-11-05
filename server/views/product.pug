@@ -1,4 +1,114 @@
 extends base
 
+
+
 block content
-    h1 this is all product
+         
+
+    .product-container
+        .product-gallery
+            .mini-gallary
+                img(src='https://cf.shopee.vn/file/14f46de3a546e2d1b05f31b947a8e6b1' alt='' onclick='changeImg(this)')
+                img(src='https://cf.shopee.vn/file/14f46de3a546e2d1b05f31b947a8e6b1' alt='' onclick='changeImg(this)')
+                img(src='https://dosi-in.com/images/detailed/42/CDL10_1.jpg' alt='' onclick='changeImg(this)')
+                img(src='https://bizweb.dktcdn.net/thumb/large/100/415/697/products/xanhla1.jpg?v=1659608557000' alt='' onclick='changeImg(this)')
+            .main-gallary
+                img#I-gallaryZome(src='https://bizweb.dktcdn.net/thumb/large/100/415/697/products/ed27fa4d-1f51-4593-9f94-a7f2c15e162c-fd991ced-c148-42e8-86b9-a89e92f5d39b.jpg?v=1660306346000' alt='')
+        .product-detail
+            .detail-title
+             h1 OLDEN TEE
+            .detail-price
+                p
+                    | 159.000
+                    sup &#x20AB;
+            .detail-size
+                input#S-size(type='radio' name='size')
+                label.sizeS(for='S-size') S
+                input#M-size(type='radio' name='size')
+                label.sizeM(for='M-size') M
+                input#L-size(type='radio' name='size')
+                label.sizeL(for='L-size') L
+                input#XL-size(type='radio' name='size')
+                label.sizeXL(for='XL-size') XL
+            .detail-quantity
+                button#I-subtract.subtract-btn(type='button' onclick='subBtn(1)') -
+                input#I-print-quantity.print-quantity(type='text' name='' value='1')
+                button#I-add.add-btn(type='button' onclick='addBtn(5)') +
+            .add-to-cart
+                button.add-cart-btn Thêm vào giỏ
+            .detail-description
+                h2 Mô tả;
+                span Do dep
+    .product-related
+        h1.related-title Sản phẩm liên quan
+        .related-list
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;
+            a(href='')
+                .related-1
+                    img.related-image(src='https://cf.shopee.vn/file/74738b84b23922b95b8d34c93ee973f9' alt='')
+                    h3.related-name CAPMAN
+                    p.related-price
+                        | 215.000
+                        sup &#x20AB;

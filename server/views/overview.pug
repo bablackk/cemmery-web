@@ -1,4 +1,37 @@
 extends base
 
 block content
-    h1 this is overview page
+
+    .body_img
+    #carouselExampleIndicators.carousel.slide(data-bs-ride='true')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='https://file.hstatic.net/200000259629/file/artboard_3-100_b2207035dea142f5ad633790d2ea5c41.jpg' alt='.firstPic')
+        .carousel-item
+          img.d-block.w-100(src='https://file.hstatic.net/200000259629/file/artboard_39_2x-100_6f850d56be8e41be8ca53f292a88ff0f.jpg' alt='2ndPic')
+      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+    hr.split
+    .product-holder
+    .body-lower
+      h1(style='text-align: center') /BEST SELLER/
+    hr.split
+    h2(style='color : rgb(213, 48, 3); text-align:center ; margin-top: 20px;') OTHER PRODUCT
+    .body-lower2
+      .body-lower2_item
+        .lower2_item
+          img(src='' alt='')
+        .lower2_item
+          img(src='https://file.hstatic.net/200000280689/file/top_490a2a6acb524e828d44ac2ccbceb6bb.png' alt='')
+        .lower2_item
+          img(src='https://file.hstatic.net/200000280689/file/outerwears_84835031814c4f78b18840ab548c34ec.png' alt='')
+        .lower2_item
+          img(src='https://file.hstatic.net/200000280689/file/bottoms_d42e9d8a6fb9451880d31f2916505ba6.png' alt='')
+    
