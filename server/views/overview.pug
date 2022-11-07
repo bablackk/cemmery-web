@@ -19,15 +19,19 @@ block content
         span.carousel-control-next-icon(aria-hidden='true')
         span.visually-hidden Next
     hr.split
+    h1(style='text-align: center') / BEST SELLER /
     .product-holder
+        each product in products
+            .product-list
+                img(src=`${product.thumbnail}` alt='').product-thumbnail
+                h5.product-name=product.productName
+                p.product-price=`${product.price}đ`
     .body-lower
-      h1(style='text-align: center') /BEST SELLER/
-    hr.split
     h2(style='color : rgb(213, 48, 3); text-align:center ; margin-top: 20px;') OTHER PRODUCT
     .body-lower2
       .body-lower2_item
         .lower2_item
-          img(src='' alt='')
+          img(src='https://file.hstatic.net/200000280689/file/new_arrivals_9b11f540d7444891973d34c4ba771f59.png' alt='')
         .lower2_item
           img(src='https://file.hstatic.net/200000280689/file/top_490a2a6acb524e828d44ac2ccbceb6bb.png' alt='')
         .lower2_item

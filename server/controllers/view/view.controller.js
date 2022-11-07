@@ -1,12 +1,12 @@
-const product = require("../../models/admin/product.model");
+const Product = require("../../models/admin/product.model");
 
 module.exports = {
   getAllProducts: async (req, res) => {
     try {
-      const allProduct = await product.find();
+      const allProduct = await Product.find();
       return res.status(200).render("products", {
         title: "Product",
-        product: allProduct,
+        products: allProduct,
       });
     } catch (error) {
       res.status(500).json(error);
@@ -14,8 +14,11 @@ module.exports = {
   },
   homePage: async (req, res) => {
     try {
+      const productOverView = await Product.find().limit(10);
+      console.log(productOverView);
       return res.status(200).render("overview", {
         title: "Home",
+        products: productOverView,
       });
     } catch (error) {
       res.status(500).json(error);
@@ -23,7 +26,7 @@ module.exports = {
   },
   getTopsProduct: async (req, res) => {
     try {
-      const topProducts = await product.find({ productType: "Tops" });
+      const topProducts = await Product.find({ productType: "Tops" });
       return res.status(200).render("product-tops", {
         title: "Tops",
         tops: topProducts,
@@ -34,7 +37,7 @@ module.exports = {
   },
   getBottomProduct: async (req, res) => {
     try {
-      const bottomProducts = await product.find({ productType: "Bottom" });
+      const bottomProducts = await Product.find({ productType: "Bottom" });
       return res.status(200).render("product-bottom", {
         title: "Bottom",
         bottom: bottomProducts,
@@ -45,7 +48,7 @@ module.exports = {
   },
   getOuterwearProduct: async (req, res) => {
     try {
-      const outerwearProducts = await product.find({
+      const outerwearProducts = await Product.find({
         productType: "Outerwear",
       });
       return res.status(200).render("product-outerwear", {
