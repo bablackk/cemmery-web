@@ -14,26 +14,34 @@ const viewRoute = require("./routes/view/view.route");
 const app = express();
 
 //middleware
-app.use(Helmet());
+app.use(
+  Helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"],
+      "script-src": ["'self'", "https: data:"],
+      "frame-src": ["'self'", "https: data:"],
+    },
+  })
+);
 app.use(morgan("dev"));
 app.use(BodyParser.urlencoded({ extended: false }));
 app.use(BodyParser.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
-
 //TEMPLATE ENGINE
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "./views"));
 // static files
-app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.static(path.join(__dirname, "public")));
 // connect to DB
 mongoose.connect(URI_MONGODB, async () => {
   await console.log("DB connected");
 });
 
-// Route\
+// Route
 app.use("/", viewRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/admin", productRoute);
