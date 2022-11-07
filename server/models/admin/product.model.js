@@ -23,6 +23,9 @@ const productSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    productType: {
+      type: String,
+    },
     description: {
       type: String,
     },
