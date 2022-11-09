@@ -14,7 +14,7 @@ module.exports = {
   },
   homePage: async (req, res) => {
     try {
-      const productOverView = await Product.find().limit(10);
+      const productOverView = await Product.find().limit(14);
       return res.status(200).render("overview", {
         title: "Home",
         products: productOverView,
@@ -26,9 +26,9 @@ module.exports = {
   getTopsProduct: async (req, res) => {
     try {
       const topProducts = await Product.find({ productType: "Tops" });
-      return res.status(200).render("product-tops", {
+      return res.status(200).render("tops", {
         title: "Tops",
-        tops: topProducts,
+        listTops: topProducts,
       });
     } catch (error) {
       res.status(500).json(error);
@@ -37,9 +37,9 @@ module.exports = {
   getBottomProduct: async (req, res) => {
     try {
       const bottomProducts = await Product.find({ productType: "Bottom" });
-      return res.status(200).render("product-bottom", {
+      return res.status(200).render("bottom", {
         title: "Bottom",
-        bottom: bottomProducts,
+        listBottom: bottomProducts,
       });
     } catch (error) {
       res.status(500).json(error);
@@ -50,9 +50,9 @@ module.exports = {
       const outerwearProducts = await Product.find({
         productType: "Outerwear",
       });
-      return res.status(200).render("product-outerwear", {
+      return res.status(200).render("outerwear", {
         title: "Outerwear",
-        outerwear: outerwearProducts,
+        listOuterwear: outerwearProducts,
       });
     } catch (error) {
       res.status(500).json(error);
