@@ -63,7 +63,10 @@ module.exports = {
       const getDetailProduct = await Product.findById(req.params.id);
       return res
         .status(200)
-        .render("detail", { title: req.params.productName, getDetailProduct });
+        .render("detail", {
+          title: getDetailProduct.productName,
+          getDetailProduct,
+        });
     } catch (error) {
       return res.status(500).render(error);
     }

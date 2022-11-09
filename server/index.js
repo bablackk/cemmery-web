@@ -14,16 +14,7 @@ const viewRoute = require("./routes/view/view.route");
 const app = express();
 
 //middleware
-app.use(
-  Helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      "img-src": ["'self'", "https: data:"],
-      "script-src": ["'self'", "https: data:"],
-      "frame-src": ["'self'", "https: data:"],
-    },
-  })
-);
+
 app.use(morgan("dev"));
 app.use(BodyParser.urlencoded({ extended: false }));
 app.use(BodyParser.json());
