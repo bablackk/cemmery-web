@@ -15,7 +15,6 @@ module.exports = {
   homePage: async (req, res) => {
     try {
       const productOverView = await Product.find().limit(10);
-      console.log(productOverView);
       return res.status(200).render("overview", {
         title: "Home",
         products: productOverView,
@@ -57,6 +56,16 @@ module.exports = {
       });
     } catch (error) {
       res.status(500).json(error);
+    }
+  },
+  getProduct: async (req, res) => {
+    try {
+      const getDetailProduct = await Product.findById(req.params.id);
+      return res
+        .status(200)
+        .render("detail", { title: req.params.productName, getDetailProduct });
+    } catch (error) {
+      return res.status(500).render(error);
     }
   },
 };

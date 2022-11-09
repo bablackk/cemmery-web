@@ -24,6 +24,7 @@ block content
         each product in products
             .product-list
                 img(src=`${product.thumbnail}` alt='').product-thumbnail
+                a(href=`/product/${product.id}`) Detail
                 h5.product-name=product.productName
                 p.product-price=`${product.price}đ`
     .body-lower

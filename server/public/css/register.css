@@ -8,7 +8,7 @@
   }
   @font-face {
     font-family: Helvetica;
-    src: url("/src/fonts/*") format("truetype");
+    src: url("../fonts/*") format("truetype");
   }
   
   body {
@@ -40,7 +40,7 @@
   }
   .header_logo {
     margin-left: 20px;
-    height: 70px;
+    height: 130px;
     width: 150px;
   }
   .header_hotline {
