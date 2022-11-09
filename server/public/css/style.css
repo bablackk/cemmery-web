@@ -47,6 +47,7 @@ body {
     font-size: 1em;
     color: rgb(0, 0, 0);
 }
+
 a {
     color: black;
 }
@@ -207,6 +208,7 @@ a {
     text-decoration: none;
 }
 
+
 .navbar {
     background-color: white;
     display: flex;
@@ -305,7 +307,7 @@ a {
 }
 
 .sub-input > * {
-    padding: 7px 10vw;
+    padding: 5px 10vw;
     border-radius: 3px;
 }
 .contact-info > * {
