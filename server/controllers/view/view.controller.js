@@ -61,12 +61,14 @@ module.exports = {
   getProduct: async (req, res) => {
     try {
       const getDetailProduct = await Product.findById(req.params.id);
-      return res
-        .status(200)
-        .render("detail", {
-          title: getDetailProduct.productName,
-          getDetailProduct,
-        });
+      const differentProduct = await Product.find({
+        productType: getDetailProduct.productType,
+      }).limit(10);
+      return res.status(200).render("detail", {
+        title: getDetailProduct.productName,
+        product: getDetailProduct,
+        listDiffProduct: differentProduct,
+      });
     } catch (error) {
       return res.status(500).render(error);
     }

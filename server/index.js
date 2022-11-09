@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const Helmet = require("helmet");
 const cors = require("cors");
 const { mongoose } = require("mongoose");
 const morgan = require("morgan");
