@@ -31,7 +31,10 @@ body {
     align-items: center;
 }
 .header_input {
-    padding: 10px 10vw;
+    padding: 10px 0;
+    padding-right : 15vw;
+    padding-left : 6px;
+    
     border: 1px solid #ECECEC;
 }
 .header_input:nth-child(2) {
@@ -55,18 +58,28 @@ a {
     display: flex;
     height: 100%;
     font-size: 0.75em;
+    
 }
-.header_login-cart > * {
+.header_login-cart- > * {
     margin-left: 1em;
+}
+.header_login_login-icon {
+    margin-bottom: 10px;
 }
 .hidden_header_login-cart {
     display: flex;
     height: 100%;
     font-size: 1.1em;
     display: none;
+
+}
+
+.hidden_header_login-cart > * {
+    margin-left: 5px;
 }
 .header_hotline {
     margin-right: 100px;
+    margin-top: 10px;
 }
 
 .header_login-cart > div {
