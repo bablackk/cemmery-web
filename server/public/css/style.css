@@ -598,6 +598,197 @@ html {
   .size:hover {
     background-color: rgb(255, 169, 169);
   }
+
+  /* register */
+
+  .content1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 2.4em;
+  }
+  .line {
+    border: 2px solid black;
+    width: 10vw;
+    margin: 0 auto;
+  }
+  .register-header {
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+  }
+  .form_subr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input {
+    width: 50vw;
+    align-items: center;
+  }
+  
+  .input_in {
+    width: 25vw;
+    height: 40px;
+    opacity: 0.5;
+    border: none;
+    background-color: rgb(216, 214, 214);
+    padding: 0 20px;
+    margin-bottom: 50px;
+   
+    color: black;
+  }
+  .input_in::placeholder {
+    color: black;
+    font-size: 16px;
+    opacity: 1;
+  }
+  
+  .input_in:focus {
+    background: white;
+  }
+  .input > span {
+    position: absolute;
+    margin-left: 10px;
+  }
+  
+  .back {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover {
+    color: #4bb6fa;
+    transition: 0.5s;
+  }
+  #message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
+  }
+  
+  #message p {
+    padding: 5px 20px;
+    font-size: 16x;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+  .form_subr {
+    justify-content: flex-start;
+  }
+  .form_subr > div > button {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    background: #4bb6fa;
+    border: 1px solid #4bb6fa;
+    cursor: pointer;
+    padding: 15px 40px;
+    transition: 0.4s;
+    border-radius: 3px;
+    margin-left: 0px;
+  }
+  .form_subr > div > button:hover {
+    background: white;
+    color: black;
+    border: 1px solid #4bb6fa;
+  }
+  .mini-title1 {
+    width: 50vw;
+  }
+  .mini-title1 > p {
+    font-size: 16px;
+  }
+
+
+  /* login */
+
+  .login-container {
+    height: 70vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .line {
+    width: 10vh;
+    padding: 5px 0;
+    background-color: rgb(41, 23, 23);
+    margin: 15px auto;
+  }
+  .login-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .input1-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-info > div {
+    margin-bottom: 30px;
+  }
+  
+  .mini-title > a {
+    color: #4bb6fa;
+    text-decoration: none;
+  }
+  .input1 {
+    width: 45vw;
+    height: 60px;
+    padding: 0 20px;
+  }
+  .login-btn {
+    padding: 12px 20px;
+    background-color: #4bb6fa;
+    border: 0.5px solid #4bb6fa;
+    border-radius: 3px;
+    color: white;
+    transition: all 0.5s;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .login-btn:hover {
+    background-color: #fff;
+    color: #4bb6fa;
+  }
+  .mini-title {
+    width: 60vh;
+  }
 @media screen and (max-width: 1023px) {
     .header_upper {
         flex-direction: column;
@@ -687,6 +878,60 @@ html {
       .related-list {
         grid-template-columns: repeat(2, 1fr);
         padding: 2vh;
+      }
+      .input_in {
+        width: 45vw;
+      }
+      .form_subr {
+        justify-content: flex-start;
+      }
+      .mini-title1 {
+        width: 50vw;
+      }
+    
+      .login-container {
+        flex-direction: column;
+      }
+      .login-title {
+        font-size: 18px;
+      }
+      .input1 {
+        width: 55vw;
+      }
+      .mini-title {
+        width: 30vh;
+        font-size: 12px;
+      }
+    
+      .login-info {
+        justify-content: flex-end;
+      }
+      .mini-title > a {
+        font-size: 16px;
+      }
+      .register-header {
+        margin-bottom: 20px;
+      }
+      .register-header > h3 {
+        font-size: 25px;
+      }
+      .input_in {
+        width: 45vw;
+      }
+      .form_subr {
+        justify-content: flex-start;
+      }
+      .mini-title1 {
+        width: 50vw;
+      }
+      .mini-title1 > p {
+        font-size: 14px;
+      }
+      .content1 {
+        flex-direction: column;
+      }
+      .error-check {
+        display: none;
       }
 }
 
