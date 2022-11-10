@@ -73,4 +73,22 @@ module.exports = {
       return res.status(500).render(error);
     }
   },
+  login: async (req, res) => {
+    try {
+      return res.status(200).render("login", {
+        title: "Register",
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+  register: async (req, res) => {
+    try {
+      return res.status(200).render("register", {
+        title: "Login",
+      });
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  },
 };

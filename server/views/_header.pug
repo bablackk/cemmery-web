@@ -16,7 +16,7 @@
                     li
                         a.nav_mobile-link(href='/') Home
                     li
-                        a.nav_mobile-link(href='') Shop
+                        a.nav_mobile-link(href='/products') Shop
                     li
                         a.nav_mobile-link(href='') Signature
                     li
@@ -30,8 +30,8 @@
                     .header_login_login-icon
                         i.bi.bi-box-arrow-in-right
                         a.login
-                            a(href='../login/login.html') Đăng nhập /
-                            a(href='../register/home.html') Đăng kí
+                            a(href='/login') Đăng nhập /
+                            a(href='/register') Đăng kí
                         .header_login_login-text
                 .header_cart
                     a(href='')
@@ -55,18 +55,14 @@
                             li
                                 a.nav-item(href='/') HOME
                             li
-                                a.nav-item(href='#') SHOP
+                                a.nav-item(href='/products') SHOP
                                 ul
                                     li
-                                        a.dropdown-item(href='#') TOP
+                                        a.dropdown-item(href='/products/tops') TOP
                                     li
-                                        a.dropdown-item(href='#') BOTTOM
+                                        a.dropdown-item(href='/products/bottom') BOTTOM
                                     li
-                                        a.dropdown-item(href='#') OUTERWEAR
-                                    li
-                                        a.dropdown-item(href='#') BAG
-                                    li
-                                        a.dropdown-item(href='#') DEAL 99k/119k
+                                        a.dropdown-item(href='/products/outerwear') OUTERWEAR
                             li
                                 a.nav-item(href='#') SIGNATURE
                             li
@@ -78,11 +74,11 @@
                     .header_login
                         .header_login_login-icon
                             i.bi.bi-box-arrow-in-right
-                            a.login(href='../')
-                                a(style='font-size: 16px;' href='../login/login.html') Đăng nhập /
-                                a(style='font-size: 16px;' href='../register/home.html')  Đăng ký
+                            a.login(href='/login')
+                                a(style='font-size: 16px;' href='/login') Đăng nhập /
+                                a(style='font-size: 16px;' href='/register')  Đăng ký
                             .header_login_login-text
                     .header_cart
-                        a(href='')
+                        a(href='/cart')
                             i.bi.bi-cart-plus
                             span(style='font-size: 14px;') Giỏ Hàng

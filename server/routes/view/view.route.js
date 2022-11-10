@@ -8,5 +8,7 @@ router.get("/products/tops", viewController.getTopsProduct);
 router.get("/products/bottom", viewController.getBottomProduct);
 router.get("/products/outerwear", viewController.getOuterwearProduct);
 router.get("/product/:id", viewController.getProduct);
+router.get("/login", viewController.login);
+router.get("/register", viewController.register);
 
 module.exports = router;
