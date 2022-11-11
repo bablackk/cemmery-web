@@ -25,6 +25,7 @@ block content
             .product-list
                a.product-list(href=`/product/${product.id}`)
                 img(src=`${product.thumbnail}` alt='').product-thumbnail
+                img(src=`${product.thumbnailAfter}` alt='').product-thumbnailAfter
                 h5.product-name=product.productName
                 p.product-price=`${product.price}đ`
     .body-lower
