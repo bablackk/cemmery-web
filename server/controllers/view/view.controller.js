@@ -6,7 +6,7 @@ module.exports = {
       const allProduct = await Product.find();
       return res.status(200).render("products", {
         title: "Product",
-        products: allProduct,
+        listProducts: allProduct,
       });
     } catch (error) {
       res.status(500).json(error);

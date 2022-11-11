@@ -1,4 +1,10 @@
 extends base
 
 block content
-    h1 this is a product tops
+    .product-holder
+        each product in listTops
+            .product-list
+                a.product-list(href=`/product/${product.id}`)
+                    img(src=`${product.thumbnail}` alt='').product-thumbnail
+                    h5.product-name=product.productName
+                    p.product-price=`${product.price}đ`
