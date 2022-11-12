@@ -236,7 +236,40 @@ nav li ul li {
   opacity: 0;
   transition: opacity .2s;
 }
-.product-thumbnailAfter 
+
+.related-1{
+  width: 20vw;
+  height: auto;
+  position: relative;
+  display: inline-block;
+
+
+}
+.related-1 > img {
+  width: 20vw;
+  height: auto;
+}
+.related-image {
+  transition: linear 0.2s;
+}
+.related-imageAfter{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity linear .2s;
+}
+.related-1:hover .related-image {
+  opacity  : 0 ;
+  border : 2px solid rgb(74, 73, 73);
+}
+.related-1:hover .related-imageAfter {
+  opacity  : 1 ;
+  border : 2px solid rgb(74, 73, 73);
+}
 
 .product-list:hover .product-thumbnail {
   opacity  : 0 ;
@@ -323,7 +356,7 @@ a {
     display: block;
     margin-bottom: 80px;
 }
-.lower2_item > img {
+.lower2_item > a > img {
     height: auto;
     width: 100%;
     transition: linear 0.3s;
@@ -334,7 +367,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
 }
-.lower2_item > img:hover {
+.lower2_item > a > img:hover {
     opacity: 0.4;
 }
 .subcribe {
@@ -616,7 +649,7 @@ html {
     text-decoration: none;
     color: black;
   }
-  .related-image {
+  .related-image ,.related-imageAfter {
     width: 100%;
     height: 100%;
     border: 1px solid #dfe0e1;
@@ -624,8 +657,11 @@ html {
   .related-image:hover {
     border: 1px solid;
   }
-  .related-name:hover {
-    color: #4bb6fa;
+  .related-name{
+    font-size: 20px;
+  }
+  .related-1:hover {
+    color :rgb(0, 44, 110);
   }
   
   .size:hover {
