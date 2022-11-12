@@ -226,6 +226,9 @@ nav li ul li {
 .product-price{
   font-size: 15px;
 }
+.product-thumbnail  {
+  transition: linear 0.2s;
+}
 .product-thumbnailAfter{
   position: absolute;
   top: 0;
@@ -234,7 +237,7 @@ nav li ul li {
   bottom: 0;
   object-fit: contain;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity linear .2s;
 }
 
 .related-1{
@@ -372,12 +375,13 @@ a {
 }
 .subcribe {
     margin-top: 3vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: rgb(185, 185, 185);
+
 }
 .sub-title > * {
     font-size: 30px;
@@ -1021,6 +1025,7 @@ html {
     }
     .subcribe {
         flex-direction: column;
+        justify-items: flex-start;
     }
 
     .subcribe > * {
