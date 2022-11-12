@@ -200,7 +200,13 @@ nav li ul li {
     height: auto;
     max-width: 100vw;
 }
-
+.tops-title , .bottom-title , .outerwear-title {
+  font-weight: bold;
+  font-size: 45px;
+  text-align: center;
+  margin: 20px 0 40px 0;
+ 
+}
 
 .product-holder {
     display: grid;
