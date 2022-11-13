@@ -1,28 +1,32 @@
 extends base
 
+block scripts
+    script(src='/js/login.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js')
+
 block content
 
-
-    .login-container
-        .login-title
-            h1 &Dstrok;&abreve;ng nh&#x1EAD;p
-            hr.line
-        .login-info
-            .input1-container
-                input.input1(type='text' placeholder='Email')
-                span
-            .input1-container
-                input.input1(type='text' placeholder='Password')
-            .mini-title
-                | This site is protected by reCAPTCHA and the
-                a(href='https://policies.google.com/privacy?hl=en-US') Google Privacy Policy
-                |             and
-                a(href='https://policies.google.com/privacy?hl=en-US') Terms of Service
-                |             apply
-            .button-container
-                button.login-btn &Dstrok;&abreve;ng nh&#x1EAD;p
-            .option
-                p
-                    a(href='') Qu&ecirc;n m&#x1EAD;t kh&#x1EA9;u
-                    |  ho&#x1EB7;c 
-                    a(href='/register') &Dstrok;&abreve;ng k&iacute;
+    form.form-login
+        .login-container
+            .login-title
+                h1 &Dstrok;&abreve;ng nh&#x1EAD;p
+                hr.line
+            .login-info
+                .input1-container
+                    input#input-email(type='text' placeholder='Email')
+                    span
+                .input1-container
+                    input#input-password(type='password' placeholder='Password')
+                .mini-title
+                    | This site is protected by reCAPTCHA and the
+                    a(href='https://policies.google.com/privacy?hl=en-US') Google Privacy Policy
+                    |             and
+                    a(href='https://policies.google.com/privacy?hl=en-US') Terms of Service
+                    |             apply
+                .button-container
+                    button.login-btn &Dstrok;&abreve;ng nh&#x1EAD;p
+                .option
+                    p
+                        a(href='') Qu&ecirc;n m&#x1EAD;t kh&#x1EA9;u
+                        |  ho&#x1EB7;c
+                        a(href='/register') &Dstrok;&abreve;ng k&iacute;

@@ -767,7 +767,7 @@ html {
   
   #message p {
     padding: 5px 20px;
-    font-size: 16x;
+    font-size: 16px;
   }
   
   /* Add a green text color and a checkmark when the requirements are right */
@@ -858,11 +858,16 @@ html {
     text-decoration: none;
   }
 
-  .input1 {
+  #input-email {
     width: 45vw;
     height: 60px;
     padding: 0 20px;
   }
+#input-password {
+    width: 45vw;
+    height: 60px;
+    padding: 0 20px;
+}
   .login-btn {
     padding: 12px 20px;
     background-color: #4bb6fa;
