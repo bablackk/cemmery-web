@@ -200,7 +200,7 @@ nav li ul li {
     height: auto;
     max-width: 100vw;
 }
-.tops-title , .bottom-title , .outerwear-title {
+.tops-title , .bottom-title , .outerwear-title ,.shop-title{
   font-weight: bold;
   font-size: 45px;
   text-align: center;
@@ -845,6 +845,10 @@ html {
   }
   .login-info > div {
     margin-bottom: 30px;
+  }
+  .login-title > h1 {
+    font-size: 70px;
+    font-weight: bold;
   }
   
   .mini-title > a {
