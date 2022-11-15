@@ -10,5 +10,6 @@ router.get("/products/outerwear", viewController.getOuterwearProduct);
 router.get("/product/:id", viewController.getProduct);
 router.get("/login", viewController.login);
 router.get("/register", viewController.register);
+router.get("/cart", viewController.cart);
 
 module.exports = router;

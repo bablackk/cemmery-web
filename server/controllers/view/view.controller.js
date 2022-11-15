@@ -76,7 +76,7 @@ module.exports = {
   login: async (req, res) => {
     try {
       return res.status(200).render("login", {
-        title: "Register",
+        title: "Login",
       });
     } catch (error) {
       res.status(500).json(error);
@@ -85,10 +85,19 @@ module.exports = {
   register: async (req, res) => {
     try {
       return res.status(200).render("register", {
-        title: "Login",
+        title: "Register",
       });
     } catch (error) {
       return res.status(500).json(error);
+    }
+  },
+  cart: async (req, res) => {
+    try {
+      return res.status(200).render("cart", {
+        title: "Cart",
+      });
+    } catch (error) {
+      res.status(500).json(error);
     }
   },
 };
