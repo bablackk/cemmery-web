@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 const {
@@ -12,6 +13,11 @@ const signToken = (id) =>
   jwt.sign({ id }, JWT_TOKEN, {
     expiresIn: JWT_EXPIRES_IN,
   });
+
+const cookieOption = {
+  expires: new Date(Date.now() + JWT_EXPIRES_IN_COOKIE * 24 * 60 * 60 * 1000),
+  httpOnly: true,
+};
 
 module.exports = authController = {
   //register
@@ -30,12 +36,7 @@ module.exports = authController = {
       });
       const token = signToken(newUser._id);
       // set cookie register
-      const cookieOption = {
-        expires: new Date(
-          Date.now() + JWT_EXPIRES_IN_COOKIE * 24 * 60 * 60 * 1000
-        ),
-        httpOnly: true,
-      };
+
       res.cookie("jwt", token, cookieOption);
       if (NODE_ENV === "production") cookieOption.scure = true;
       // save to database
@@ -54,6 +55,7 @@ module.exports = authController = {
     try {
       const email = await User.findOne({ email: req.body.email });
       const token = signToken(email._id);
+      res.cookie("jwt", token, cookieOption);
 
       if (!email) {
         return res.status(404).json("Wrong email or password");
@@ -67,7 +69,6 @@ module.exports = authController = {
       }
       if (email && validPassword) {
         const { _id, password, ...others } = email._doc;
-        console.log(others);
         return res.status(200).json({
           status: "success",
           token,
@@ -77,5 +78,22 @@ module.exports = authController = {
     } catch (error) {
       res.status(400).json({ status: "fail", error });
     }
+  },
+  protect: async (req, res, next) => {
+    let token;
+    if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
+      console.log(token);
+      next();
+    }
+    if (!token) {
+      return next(res.status(401).json("please log in to get access"));
+    }
+    //verify token
+    const decoded = await promisify(jwt.verify)(token, JWT_TOKEN);
+    console.log(decoded);
   },
 };
