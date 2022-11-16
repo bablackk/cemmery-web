@@ -1,0 +1,16 @@
+extends base
+
+block scripts
+    script(src='/js/products.js')
+
+
+block content
+    h1.shop-title SHOP
+    .product-holder
+        each product in listProducts
+            .product-list
+                a.product-list(href=`/product/${product.id}`)
+                    img(src=`${product.thumbnail}` alt='').product-thumbnail
+                    img(src=`${product.thumbnailAfter}` alt='').product-thumbnailAfter
+                    h5.product-name=product.productName
+                    p.product-price=`${product.price}đ`

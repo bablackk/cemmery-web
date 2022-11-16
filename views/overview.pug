@@ -1,0 +1,49 @@
+extends base
+
+block content
+
+    .body_img
+    #carouselExampleIndicators.carousel.slide(data-bs-ride='true')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='https://file.hstatic.net/200000259629/file/artboard_3-100_b2207035dea142f5ad633790d2ea5c41.jpg' alt='.firstPic')
+        .carousel-item
+          img.d-block.w-100(src='https://file.hstatic.net/200000259629/file/artboard_39_2x-100_6f850d56be8e41be8ca53f292a88ff0f.jpg')
+      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+    hr.split
+    h1(style='text-align: center') / BEST SELLER /
+    .product-holder
+        each product in products
+            .product-list
+               a.product-list(href=`/product/${product.id}`)
+                img(src=`${product.thumbnail}` alt='').product-thumbnail
+                img(src=`${product.thumbnailAfter}` alt='').product-thumbnailAfter
+                h5.product-name=product.productName
+                p.product-price=`${product.price}đ`
+    .body-lower
+    .body-lower2
+      .body-lower2_item
+        .lower2_item
+          a(href='#')
+            img(src='https://file.hstatic.net/200000280689/file/new_arrivals_9b11f540d7444891973d34c4ba771f59.png' alt='')
+        .lower2_item
+          a(href='#')
+            img(src='https://file.hstatic.net/200000280689/file/top_490a2a6acb524e828d44ac2ccbceb6bb.png' alt='')
+        .lower2_item
+          a(href='#')
+            img(src='https://file.hstatic.net/200000280689/file/outerwears_84835031814c4f78b18840ab548c34ec.png' alt='')
+        .lower2_item
+          a(href='#')
+            img(src='https://file.hstatic.net/200000280689/file/bottoms_d42e9d8a6fb9451880d31f2916505ba6.png' alt='')
+        
+        
+       
+    

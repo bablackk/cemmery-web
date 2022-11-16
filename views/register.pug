@@ -1,0 +1,52 @@
+extends base
+block scripts
+    script(src='/js/register.js')
+block content
+
+    .content1
+        .register-header
+            h3 T&#x1EA1;o t&agrave;i kho&#x1EA3;n
+            hr.line
+            .error-check
+                #message
+                    h6 Password must contain the following:
+                    p#letter.invalid
+                        | A 
+                        b lowercase
+                        |  letter
+                    p#capital.invalid
+                        | A 
+                        b capital (uppercase)
+                        |  letter
+                    p#number.invalid
+                        | A 
+                        b number
+                    p#length.invalid
+                        | Minimum 
+                        b 8 characters
+        .form_subr
+            div
+                .input
+                    input#i-input_in-ho.input_in(type='text' placeholder='Họ')
+                    span#i-input_in-ho_error
+                .input
+                    input#i-input_in-ten.input_in(type='text' placeholder='Tên')
+                    span#i-input_in-ten_error
+                .input
+                    input#i-input_in-email.input_in(type='text' placeholder='Email')
+                    span#i-input_in-email_error
+                .input
+                    input#i-input_in-password.input_in(name='psw' type='text' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters' placeholder='Password')
+                    span#i-input_in-password_error
+            .mini-title1
+                p
+                    | This site is protected by reCAPTCHA and the Google
+                    span
+                        a(href='https://policies.google.com/privacy') Privacy Policy
+                    |             and
+                    a(href='https://policies.google.com/terms') Terms of Service
+                    |             apply.
+            div
+                button(onclick='validate()' type='button') &Dstrok;&Abreve;NG K&Yacute;
+            .return
+                a.back(href='/')  Quay l&#x1EA1;i trang ch&#x1EE7;
