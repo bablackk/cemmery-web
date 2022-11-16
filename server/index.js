@@ -30,6 +30,11 @@ app.use(
     message: "Too many request from this IP please try again in an hour!!",
   })
 );
+app.use(async (req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  console.log(req.headers);
+  next();
+});
 //TEMPLATE ENGINE
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "./views"));
