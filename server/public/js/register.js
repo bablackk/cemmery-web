@@ -12,7 +12,7 @@ function validate() {
   let test = true;
 
   let ho = getValue("i-input_in-ho");
-  if (ho == "" || maSV1.length > 10) {
+  if (ho == "" || ho.length > 10) {
     test = false;
     showError("i-input_in-ho", "Họ không hợp lệ!");
   }
@@ -96,3 +96,35 @@ myInput.onkeyup = function () {
     length.classList.add("invalid");
   }
 };
+
+const register = async (firstName, lastName, email, password) => {
+  try {
+    const res = await axios({
+      method: "POST",
+      url: "http://localhost:3333/api/auth/register",
+      data: {
+        firstName,
+        lastName,
+        email,
+        password,
+      },
+    });
+    // if (res.data.user.others.admin) {
+    //   window.location.href = "http://localhost:3333/admin";
+    // } else {
+    //   window.location.href = "http://localhost:3333/";
+    // }
+    console.log(res);
+  } catch (e) {
+    console.log(e.response.data);
+  }
+};
+
+document.querySelector(".form-register").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const firstName = document.getElementById("i-input_in-ho").value;
+  const lastName = document.getElementById("i-input_in-ten").value;
+  const email = document.getElementById("i-input_in-email").value;
+  const password = document.getElementById("i-input_in-password").value;
+  register(firstName, lastName, email, password);
+});

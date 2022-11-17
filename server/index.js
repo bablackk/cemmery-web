@@ -1,6 +1,8 @@
 const path = require("path");
 const express = require("express");
 const rateLimit = require("express-rate-limit");
+const session = require("express-session");
+const mongoDBSession = require("connect-mongodb-session")(session);
 const cors = require("cors");
 const { mongoose } = require("mongoose");
 const morgan = require("morgan");
@@ -12,6 +14,11 @@ const productRoute = require("./routes/admin/product.route");
 const userRoute = require("./routes/admin/user.route");
 const viewRoute = require("./routes/view/view.route");
 const app = express();
+// save session to database
+const store = new mongoDBSession({
+  uri: URI_MONGODB,
+  collection: "sessions",
+});
 
 //middleware
 if (NODE_ENV === "development") {
@@ -28,6 +35,15 @@ app.use(
     max: 100,
     windowMs: 60 * 60 * 1000,
     message: "Too many request from this IP please try again in an hour!!",
+  })
+);
+// config session in database
+app.use(
+  session({
+    secret: "dpql-key-session",
+    resave: false,
+    saveUninitialized: true,
+    store,
   })
 );
 app.use(async (req, res, next) => {
