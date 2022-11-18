@@ -1,4 +1,5 @@
 const Product = require("../../models/admin/product.model");
+const User = require("../../models/user.model");
 
 module.exports = {
   getAllProducts: async (req, res) => {

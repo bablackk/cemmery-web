@@ -97,23 +97,23 @@ myInput.onkeyup = function () {
   }
 };
 
-const register = async (firstName, lastName, email, password) => {
+const register = async (firstname, lastname, email, password) => {
   try {
     const res = await axios({
       method: "POST",
       url: "http://localhost:3333/api/auth/register",
       data: {
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
         password,
       },
     });
-    // if (res.data.user.others.admin) {
-    //   window.location.href = "http://localhost:3333/admin";
-    // } else {
-    //   window.location.href = "http://localhost:3333/";
-    // }
+    if (res.statusText === "OK") {
+      window.location.href = "http://localhost:3333/login";
+    } else {
+      window.location.href = "http://localhost:3333/register";
+    }
     console.log(res);
   } catch (e) {
     console.log(e.response.data);
@@ -122,9 +122,9 @@ const register = async (firstName, lastName, email, password) => {
 
 document.querySelector(".form-register").addEventListener("submit", (e) => {
   e.preventDefault();
-  const firstName = document.getElementById("i-input_in-ho").value;
-  const lastName = document.getElementById("i-input_in-ten").value;
+  const firstname = document.getElementById("i-input_in-ho").value;
+  const lastname = document.getElementById("i-input_in-ten").value;
   const email = document.getElementById("i-input_in-email").value;
   const password = document.getElementById("i-input_in-password").value;
-  register(firstName, lastName, email, password);
+  register(firstname, lastname, email, password);
 });

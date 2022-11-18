@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { promisify } = require("util");
+//const { promisify } = require("util");
 const User = require("../models/user.model");
 const AppError = require("../utils/appError");
 const {
