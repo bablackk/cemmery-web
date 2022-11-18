@@ -114,7 +114,6 @@ const register = async (firstname, lastname, email, password) => {
     } else {
       window.location.href = "http://localhost:3333/register";
     }
-    console.log(res);
   } catch (e) {
     console.log(e.response.data);
   }
