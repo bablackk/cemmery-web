@@ -1,6 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+//const { promisify } = require("util");
 const User = require("../models/user.model");
+const AppError = require("../utils/appError");
 const {
   JWT_TOKEN,
   JWT_EXPIRES_IN,
@@ -28,20 +30,20 @@ module.exports = authController = {
         email: req.body.email,
         password: hashed,
       });
-      const token = signToken(newUser._id);
-      // set cookie register
-      const cookieOption = {
-        expires: new Date(
-          Date.now() + JWT_EXPIRES_IN_COOKIE * 24 * 60 * 60 * 1000
-        ),
-        httpOnly: true,
-      };
-      res.cookie("jwt", token, cookieOption);
-      if (NODE_ENV === "production") cookieOption.scure = true;
+      // const token = signToken(newUser._id);
+      // // set cookie register
+      // const cookieOption = {
+      //   expires: new Date(
+      //     Date.now() + JWT_EXPIRES_IN_COOKIE * 24 * 60 * 60 * 1000
+      //   ),
+      //   httpOnly: true,
+      // };
+      // res.cookie("jwt", token, cookieOption);
+      // if (NODE_ENV === "production") cookieOption.scure = true;
       // save to database
       const user = await newUser.save();
       res.status(200).json({
-        token,
+        // token,
         data: {
           user,
         },
@@ -53,7 +55,7 @@ module.exports = authController = {
   loginUser: async (req, res) => {
     try {
       const email = await User.findOne({ email: req.body.email });
-      const token = signToken(email._id);
+      // const token = signToken(email._id);
 
       if (!email) {
         return res.status(404).json("Wrong email or password");
@@ -70,7 +72,7 @@ module.exports = authController = {
         console.log(others);
         return res.status(200).json({
           status: "success",
-          token,
+          // token,
           user: { others },
         });
       }
@@ -78,4 +80,20 @@ module.exports = authController = {
       res.status(400).json({ status: "fail", error });
     }
   },
+  // protect: async (req, res, next) => {
+  //   //check token and split token
+  //   let token;
+  //   if (
+  //     req.headers.authorization &&
+  //     req.headers.authorization.startsWith("Bearer")
+  //   ) {
+  //     token = req.headers.authorization.split(" ")[1];
+  //     next();
+  //   }
+  //   if (!token) {
+  //     return next(new AppError("please login to access", 401));
+  //   }
+  //   // verify token
+  //   const decoded = await promisify(jwt.verify)(token, JWT_TOKEN);
+  // },
 };

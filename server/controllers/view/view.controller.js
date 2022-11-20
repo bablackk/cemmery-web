@@ -1,4 +1,5 @@
 const Product = require("../../models/admin/product.model");
+const User = require("../../models/user.model");
 
 module.exports = {
   getAllProducts: async (req, res) => {
@@ -15,6 +16,9 @@ module.exports = {
   homePage: async (req, res) => {
     try {
       const productOverView = await Product.find().limit(14);
+      req.session.isAuth = true;
+      console.log(req.session);
+      console.log(req.session.id);
       return res.status(200).render("overview", {
         title: "Home",
         products: productOverView,
