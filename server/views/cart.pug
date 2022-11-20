@@ -1,4 +1,43 @@
 extends base
 
+
+block scripts
+    script(src='/js/cart.js')
 block content
-    h1 this is cart
+    .cart
+        .title-header
+            h1.title-web Gi&#x1ECF; h&agrave;ng c&#x1EE7;a b&#x1EA1;n
+            p.title-amount
+            | C&oacute; 
+            span 5
+            |  s&#x1EA3;n ph&#x1EA9;m trong gi&#x1ECF; h&agrave;ng
+            hr.line-header
+        .cart-container         
+            .sum-product
+                .image-product
+                    img.img-product(src='../payment/img/images.jfif' alt='hình ảnh')
+                .title-product
+                    .properties-product
+                        p.name-properties SIGNATURE TEE 1.0 #White
+                        p.price-properties 149000&dstrok;
+                        p.size-properties M
+                    .detail-quantity
+                        p S&#x1ED1; l&#x1B0;&#x1EE3;ng
+                        input#I-print-quantity.print-quantity(type='number' name='' value=1)
+                    .title-price
+                        button.delete-btn(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                        // ! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
+                        path(d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z')
+        .final
+            .left-final
+                textarea.note(type='text' placeholder='Ghi chú')
+            .right-final
+                div
+                    p
+                    | T&#x1ED5;ng ti&#x1EC1;n: 
+                    span.price-final
+                div
+                    button.btn-cart TI&#x1EBE;P T&#x1EE4;C THANH TO&Aacute;N
+                    button.btn-cart C&#x1EAC;P NH&#x1EAC;T
+                    button.btn-cart THANH TO&Aacute;N
