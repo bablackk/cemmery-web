@@ -96,34 +96,3 @@ myInput.onkeyup = function () {
     length.classList.add("invalid");
   }
 };
-
-const register = async (firstname, lastname, email, password) => {
-  try {
-    const res = await axios({
-      method: "POST",
-      url: "http://localhost:3333/api/auth/register",
-      data: {
-        firstname,
-        lastname,
-        email,
-        password,
-      },
-    });
-    if (res.statusText === "OK") {
-      window.location.href = "http://localhost:3333/login";
-    } else {
-      window.location.href = "http://localhost:3333/register";
-    }
-  } catch (e) {
-    console.log(e.response.data);
-  }
-};
-
-document.querySelector(".form-register").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const firstname = document.getElementById("i-input_in-ho").value;
-  const lastname = document.getElementById("i-input_in-ten").value;
-  const email = document.getElementById("i-input_in-email").value;
-  const password = document.getElementById("i-input_in-password").value;
-  register(firstname, lastname, email, password);
-});

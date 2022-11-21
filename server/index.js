@@ -6,7 +6,12 @@ const mongoDBSession = require("connect-mongodb-session")(session);
 const cors = require("cors");
 const { mongoose } = require("mongoose");
 const morgan = require("morgan");
-const { PORT, URI_MONGODB, NODE_ENV } = require("./config/index.config");
+const {
+  PORT,
+  URI_MONGODB,
+  NODE_ENV,
+  SECRET_KEY,
+} = require("./config/index.config");
 const cookieParser = require("cookie-parser");
 const BodyParser = require("body-parser");
 const authRoute = require("./routes/auth.route");
@@ -14,7 +19,7 @@ const productRoute = require("./routes/admin/product.route");
 const userRoute = require("./routes/admin/user.route");
 const viewRoute = require("./routes/view/view.route");
 const app = express();
-// save session to database
+//save session to database
 const store = new mongoDBSession({
   uri: URI_MONGODB,
   collection: "sessions",
@@ -27,7 +32,7 @@ if (NODE_ENV === "development") {
 app.use(BodyParser.urlencoded({ extended: false }));
 app.use(BodyParser.json());
 app.use(cors());
-app.use(cookieParser());
+app.use(cookieParser(SECRET_KEY));
 app.use(express.json());
 app.use(
   "/api",
@@ -37,13 +42,18 @@ app.use(
     message: "Too many request from this IP please try again in an hour!!",
   })
 );
-// config session in database
+//config session in database
 app.use(
   session({
     secret: "dpql-key-session",
     resave: false,
     saveUninitialized: true,
     store,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+      httpOnly: true,
+      secure: false,
+    },
   })
 );
 app.use(async (req, res, next) => {

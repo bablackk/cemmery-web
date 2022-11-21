@@ -26,20 +26,20 @@ block content
                     p#length.invalid
                         | Minimum 
                         b 8 characters
-        form.form-register
+        form(action='/register' method='POST' id='register')
             .form_subr
                 div
                     .input
-                        input#i-input_in-ho.input_in(type='text' placeholder='Họ')
+                        input#i-input_in-ho.input_in(type='text' placeholder='Họ' name='firstname' value=body?body.firstname : "")
                         span#i-input_in-ho_error
                     .input
-                        input#i-input_in-ten.input_in(type='text' placeholder='Tên')
+                        input#i-input_in-ten.input_in(type='text' placeholder='Tên' name='lastname' value=body?body.lastname : "")
                         span#i-input_in-ten_error
                     .input
-                        input#i-input_in-email.input_in(type='text' placeholder='Email')
+                        input#i-input_in-email.input_in(type='text' placeholder='Email' name='email' value=body?body.email : "")
                         span#i-input_in-email_error
                     .input
-                        input#i-input_in-password.input_in(name='psw' type='password' placeholder='Password')
+                        input#i-input_in-password.input_in(name='password' type='password' placeholder='Password' value=body?body.password : "")
                         span#i-input_in-password_error
                 .mini-title1
                     p
@@ -50,6 +50,6 @@ block content
                         a(href='https://policies.google.com/terms') Terms of Service
                         |             apply.
                 div
-                    button &Dstrok;&Abreve;NG K&Yacute;
+                    button(type='submit') &Dstrok;&Abreve;NG K&Yacute;
                 .return
                     a.back(href='/')  Quay l&#x1EA1;i trang ch&#x1EE7;

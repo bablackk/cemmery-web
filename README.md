@@ -1,10 +1,10 @@
 # Install node_modules
 
 ```bash
-npm i 
+npm install
 ```
 
-# Start server Dev
+# Start server Developer
 
 ```bash
 npm run dev

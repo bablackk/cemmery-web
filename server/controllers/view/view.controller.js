@@ -1,5 +1,6 @@
 const Product = require("../../models/admin/product.model");
 const User = require("../../models/user.model");
+const bcrypt = require("bcrypt");
 
 module.exports = {
   getAllProducts: async (req, res) => {
@@ -16,9 +17,6 @@ module.exports = {
   homePage: async (req, res) => {
     try {
       const productOverView = await Product.find().limit(14);
-      req.session.isAuth = true;
-      console.log(req.session);
-      console.log(req.session.id);
       return res.status(200).render("overview", {
         title: "Home",
         products: productOverView,
@@ -79,11 +77,29 @@ module.exports = {
   },
   login: async (req, res) => {
     try {
-      return res.status(200).render("login", {
+      res.status(200).render("login", {
         title: "Login",
       });
     } catch (error) {
       res.status(500).json(error);
+    }
+  },
+  loginHandle: async (req, res, next) => {
+    const user = await User.findOne({ email: req.body.email });
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!validPassword && !user) {
+      return res.redirect("/login").end;
+    } else {
+      req.session.user = {
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+      };
+      res.cookie("userId", user.id, { signed: true });
+      return res.redirect(user.admin === true ? "/admin" : "/");
     }
   },
   register: async (req, res) => {
@@ -95,6 +111,28 @@ module.exports = {
       return res.status(500).json(error);
     }
   },
+  registerHandle: async (req, res, next) => {
+    try {
+      // hash password
+      const salt = await bcrypt.genSalt(10);
+      const hashed = await bcrypt.hash(req.body.password, salt);
+
+      // create new User
+      const newUser = await new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: hashed,
+      });
+      const user = await newUser.save();
+      res.status(200).redirect("/login");
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+  logoutHandle: (req, res) => {
+    res.clearCookie("userId").redirect("/login");
+  },
   cart: async (req, res) => {
     try {
       return res.status(200).render("cart", {
@@ -103,5 +141,25 @@ module.exports = {
     } catch (error) {
       res.status(500).json(error);
     }
+  },
+  admin_panel: async (req, res) => {
+    try {
+      return res.status(200).render("admin_panel", {
+        title: "Admin",
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+  checkout: async (req, res) => {
+    try {
+      return res.status(200).render("checkout");
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  },
+  handleCheckout: async (req, res) => {
+    try {
+    } catch (error) {}
   },
 };

@@ -1,0 +1,58 @@
+extends base
+
+block content
+    .ad-header
+        .ad-right_header
+            img.ad-logo-img(src='../../img/logo2.png' alt='logo')
+        .ad-left_header
+            ul.ad-nav
+                li.ad-nav_item
+                    i.bi.bi-house-door
+                    a(href='#') Home
+                li.ad-nav_item
+                    i.bi.bi-list-ol
+                    a(href='../product/product.html') Product
+                li.ad-nav_item
+                    i.bi.bi-truck
+                    a(href='#') Delivery
+                li.ad-nav_item
+                    i.bi.bi-door-closed
+                    a(href='#') Logout
+    .ad-body
+        .ad-body_left
+            ul.ad-menu
+                li.ad-menu_item
+                    i.bi.bi-speedometer2
+                    |  Dashboard
+                li.ad-menu_item
+                    i.bi.bi-list-task
+                    | Product
+                li.ad-menu_item
+                    i.bi.bi-cart-check
+                    |  Order
+                li.ad-menu_item
+                    i.bi.bi-person-circle
+                    | Profile
+                li.ad-menu_item
+                    i.bi.bi-box-arrow-left
+                    | Logout
+        .ad-body_right
+            .ad-notify
+                h1 Welcome to Dashboard
+            .ad-shower
+                .ad-shower_item
+                    p
+                        i.bi.bi-list-ul
+                        |  All Product
+                .ad-shower_item
+                    p
+                        i.bi.bi-people
+                        |  All User
+                .ad-shower_item
+                    p
+                        i.bi.bi-cart-check
+                        | All Order
+                .ad-shower_item
+                    p
+                        i.bi.bi-person-circle
+                        | Your profile

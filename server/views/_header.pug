@@ -74,12 +74,16 @@
                                     i.bi.bi-check2-circle
                 .header_login-cart
                     .header_login
-                        .header_login_login-icon
-                            i.bi.bi-box-arrow-in-right
-                            a.login(href='/login')
-                                a(style='font-size: 16px;' href='/login') Đăng nhập /
-                                a(style='font-size: 16px;' href='/register')  Đăng ký
-                            .header_login_login-text
+                        if user
+                            p=user.lastname
+                            p logout
+                        else
+                            .header_login_login-icon
+                                i.bi.bi-box-arrow-in-right
+                                a.login(href='/login')
+                                    a(style='font-size: 16px;' href='/login') Đăng nhập /
+                                    a(style='font-size: 16px;' href='/register')  Đăng ký
+                                .header_login_login-text
                     .header_cart
                         a(href='/cart')
                             i.bi.bi-cart-plus

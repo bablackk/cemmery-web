@@ -1,6 +1,4 @@
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-//const { promisify } = require("util");
 const User = require("../models/user.model");
 const AppError = require("../utils/appError");
 const {
@@ -9,11 +7,6 @@ const {
   JWT_EXPIRES_IN_COOKIE,
   NODE_ENV,
 } = require("../config/index.config");
-
-const signToken = (id) =>
-  jwt.sign({ id }, JWT_TOKEN, {
-    expiresIn: JWT_EXPIRES_IN,
-  });
 
 module.exports = authController = {
   //register
@@ -30,20 +23,8 @@ module.exports = authController = {
         email: req.body.email,
         password: hashed,
       });
-      // const token = signToken(newUser._id);
-      // // set cookie register
-      // const cookieOption = {
-      //   expires: new Date(
-      //     Date.now() + JWT_EXPIRES_IN_COOKIE * 24 * 60 * 60 * 1000
-      //   ),
-      //   httpOnly: true,
-      // };
-      // res.cookie("jwt", token, cookieOption);
-      // if (NODE_ENV === "production") cookieOption.scure = true;
-      // save to database
       const user = await newUser.save();
       res.status(200).json({
-        // token,
         data: {
           user,
         },
@@ -54,25 +35,21 @@ module.exports = authController = {
   },
   loginUser: async (req, res) => {
     try {
-      const email = await User.findOne({ email: req.body.email });
-      // const token = signToken(email._id);
-
-      if (!email) {
+      const user = await User.findOne({ email: req.body.email });
+      if (!user) {
         return res.status(404).json("Wrong email or password");
       }
       const validPassword = await bcrypt.compare(
         req.body.password,
-        email.password
+        user.password
       );
       if (!validPassword) {
         return res.status(404).json("Wrong email or password");
       }
-      if (email && validPassword) {
-        const { _id, password, ...others } = email._doc;
-        console.log(others);
+      if (user && validPassword) {
+        const { password, ...others } = user._doc;
         return res.status(200).json({
           status: "success",
-          // token,
           user: { others },
         });
       }
@@ -80,20 +57,4 @@ module.exports = authController = {
       res.status(400).json({ status: "fail", error });
     }
   },
-  // protect: async (req, res, next) => {
-  //   //check token and split token
-  //   let token;
-  //   if (
-  //     req.headers.authorization &&
-  //     req.headers.authorization.startsWith("Bearer")
-  //   ) {
-  //     token = req.headers.authorization.split(" ")[1];
-  //     next();
-  //   }
-  //   if (!token) {
-  //     return next(new AppError("please login to access", 401));
-  //   }
-  //   // verify token
-  //   const decoded = await promisify(jwt.verify)(token, JWT_TOKEN);
-  // },
 };
