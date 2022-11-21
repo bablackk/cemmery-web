@@ -144,7 +144,8 @@ function addToCartClicked(event) {
     var title = shopItem.getElementsByClassName('title-product-name')[0].innerText
     const id = event.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     const finalId = id + size;
-    var price = shopItem.getElementsByClassName('price-product')[0].innerText
+    var priceEl = shopItem.getElementsByClassName('price-product')[0].innerText
+    let price = priceEl.substring(0, priceEl.length - 1);
     var sL = Number(shopItem.getElementsByClassName('print-quantity')[0].value)
      let tempp = sL;
     console.log(typeof(sL))
@@ -155,44 +156,62 @@ function addToCartClicked(event) {
 
     const item = new cartItem(title, img , price ,sL , size)
     LocalCart.addItemToLocalCart(finalId,item)
+    
+    
 }
 
 function updateCartUI() {
-    const cartContainer = document.querySelector('.cart-container');
-    cartContainer.innerHTML= "";
+    const cartContainer = document.querySelector('.cart-container')
+    cartContainer.innerHTML = ''
 
     const items = LocalCart.getLocalCartItems('cartItems');
+    console.log(items)
     if(items === null) return;
- 
+    let count = 0;
+    let total = 0;
     for (const[key,value] of items.entries()) {
-    const cartItem = document.createElement('div')
-    cartItem.classList.add('sum-product');
-    cartItem.innerHTML=  
-                `<div class="image-product">
+    const holder = document.createElement('div')
+    holder.classList.add('sum-product');
+    let totalPrice = value.price * value.quantity
+    count+=1;
+    total += totalPrice;
+    holder.innerHTML =  `
+            <div class="image-product">
                 <img class="img-product" src="${value.img}" alt="hình ảnh" />
-              </div>
-              <div class="title-product">
+            </div>
+            <div class="title-product">
                 <div class="properties-product">
-                  <p class="name-properties">${value.name}</p>
-                  <p class="price-properties">${value.price}</p>
-                  <p class="size-properties">${value.size}</p>
-                  <div class="detail-quantity">
-                    <input type="number" class="print-quantity" name="" id="I-print-quantity" value="${value.quantity}" >             
-                
-                </div>
-                </div>
-                <div class="title-price">
-                  <button class="delete-btn" href="#"
-                    > 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
-                  </button>
+                    <p class="name-properties">${value.name}</p>
+                    <p class="price-properties">${value.price}</p>
+                    <p class="size-properties">${value.size}</p>
+                    <div class="detail-quantity">
+                    <h6>Số lượng</h6>
+                        <input type="number" class="print-quantity" name="" id="I-print-quantity" value="${value.quantity}" >             
+                    
+                        </div>
                 </div>
                 
-              </div>`
+                    <button class="delete-btn" href="#"
+                        > 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                    </button>
+                
+                
+            </div>`
     
-    
+            holder.lastElementChild.lastElementChild.addEventListener("click", () => {LocalCart.removeItemFromCart(key)})
+            cartContainer.append(holder)
     }
-    cartContainer.append(cartItem)
+    
+    if(count > 0){
+        const subtotal =  document.querySelector(".price-final")
+        subtotal.innerHTML = total;
+        let input = document.getElementsByClassName('print-quantity')
+        input.addEventListener('change', ()=> {
+            const subtotal =  document.querySelector(".price-final")
+        subtotal.innerHTML = total;
+        })
+    }
 
 }
 

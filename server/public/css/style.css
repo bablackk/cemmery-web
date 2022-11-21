@@ -1034,6 +1034,19 @@ html {
     font-weight:600;
     margin: 5px;
 }
+.cart-container {
+  background-color: rgb(248, 246, 246);
+  padding: 25px 0;
+  margin: 0 25px;
+  height: auto;;
+}
+.sum-product {
+  margin-left: 25px;
+  margin-right: 25px;
+  
+  background-color: rgb(230, 230, 230);
+  padding: 15px;
+}
 .title-amount{
     padding-bottom: 20px;
     font-size: 12px;
@@ -1045,23 +1058,26 @@ html {
 }
 .sum-product{
     display: flex;
+    margin-bottom: 20px;
 }
 .img-product{
     width: 100px;
 }
 .delete-btn {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     float: left;
 }
 svg{
-    display: none;;
+    width: 25px;
+    height: 25px;
 }
 
 .title-product{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-left: 20px;
 }
 .name-properties{
     font-weight: 700;
