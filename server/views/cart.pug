@@ -1,4 +1,26 @@
 extends base
 
+
+block scripts
+    script(src='/js/cart.js')
 block content
-    h1 this is cart
+    .cart
+        .title-header
+            h1.title-web Gi&#x1ECF; h&agrave;ng c&#x1EE7;a b&#x1EA1;n
+            hr.line-header
+        .cart-container#i-cart-         
+            .sum-product
+            
+        .final
+            .left-final
+                textarea.note(type='text' placeholder='Ghi chú')
+            .right-final
+                div
+                    p
+                    | T&#x1ED5;ng ti&#x1EC1;n: 
+                    span.price-final
+                    sup VND;
+                div
+                    button.btn-cart TI&#x1EBE;P T&#x1EE4;C MUA HÀNG
+                    button.btn-cart C&#x1EAC;P NH&#x1EAC;T
+                    button.btn-cart THANH TO&Aacute;N
