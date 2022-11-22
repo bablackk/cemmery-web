@@ -1259,9 +1259,6 @@ textarea{
   color:#4bb6fa;
   border: 1px solid #4bb6fa;
 }
-
-
-
   @media screen and (max-width: 1023px) {
     .header_upper {
         flex-direction: column;

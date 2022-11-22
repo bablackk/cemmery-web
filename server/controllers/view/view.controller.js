@@ -153,7 +153,7 @@ module.exports = {
   },
   checkout: async (req, res) => {
     try {
-      return res.status(200).render("checkout");
+      return res.status(200).render("payment");
     } catch (error) {
       return res.status(500).json(error);
     }
@@ -161,5 +161,10 @@ module.exports = {
   handleCheckout: async (req, res) => {
     try {
     } catch (error) {}
+  },
+  errorPage: async (req, res) => {
+    return res.status(404).render("error", {
+      title: "Error",
+    });
   },
 };

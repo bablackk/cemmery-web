@@ -25,4 +25,6 @@ router
   .get(viewController.checkout)
   .post(viewController.handleCheckout);
 
+router.get("*", viewController.errorPage);
+
 module.exports = router;
