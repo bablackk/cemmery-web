@@ -1259,6 +1259,12 @@ textarea{
   color:#4bb6fa;
   border: 1px solid #4bb6fa;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
   @media screen and (max-width: 1023px) {
     .header_upper {
         flex-direction: column;
