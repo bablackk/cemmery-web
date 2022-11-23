@@ -1117,6 +1117,7 @@ textarea{
     flex-direction: column;
     justify-content:space-evenly;
     align-items: flex-end;    
+    margin-right: 2vw;
 }
     
 .note{
@@ -1138,6 +1139,7 @@ textarea{
     padding: 15px;
     cursor: pointer;
     font-weight: 700;
+    margin-left: 10px;
 }
 .btn-cart:hover{
     background-color: white;
@@ -1214,13 +1216,17 @@ textarea{
   margin: 10px 0px;
 }
 .price-properties{
-  text-align: right;
+ 
   padding-top: 20px;
 }
 .price-ship,.final-price,.properties{
   display: flex;
   width: 100%;
   justify-content:space-between;
+}
+.detail-quantity > h6 {
+  margin-top: 4px;
+  margin-right: 5px;
 }
 .name-price{
   margin: 0px;
