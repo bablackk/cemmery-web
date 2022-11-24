@@ -145,7 +145,7 @@ module.exports = {
       res.status(500).json(error);
     }
   },
-  admin_panel: async (req, res) => {
+  adminPage: async (req, res) => {
     try {
       return res.status(200).render("admin_panel", {
         title: "Admin",
@@ -169,5 +169,14 @@ module.exports = {
     return res.status(404).render("error", {
       title: "Error",
     });
+  },
+  profile: async (req, res) => {
+    try {
+      res.status(200).render("profile", {
+        title: "Profile",
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
   },
 };

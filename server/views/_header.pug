@@ -28,13 +28,17 @@
                 img.header_logo(src='https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.15752-9/307853364_598510478719925_2958582378382186153_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=avxTW-TxJlEAX_JfAdN&_nc_ht=scontent.fsgn4-1.fna&oh=03_AdSEyoN4nkmMfgVHq5WISUAoF-uMPgqamw5lEhQRIsPukA&oe=63875774' alt='')
 
             .hidden_header_login-cart
-                .header_login
-                    .header_login_login-icon
-                        i.bi.bi-box-arrow-in-right
-                        a.login
-                            a(href='/login') Đăng nhập /
-                            a(href='/register') Đăng kí
-                        .header_login_login-text
+                if user
+                    p=user.firstname + ' ' + user.lastname
+                    a(href='/logout') logout
+                else
+                    .header_login
+                        .header_login_login-icon
+                            i.bi.bi-box-arrow-in-right
+                            a.login
+                                a(href='/login') Đăng nhập /
+                                a(href='/register') Đăng kí
+                            .header_login_login-text
                 .header_cart
                     .cart-icon
                         a(href='')
@@ -78,7 +82,7 @@
                 .header_login-cart
                     .header_login
                         if user
-                            p=user.email
+                            p=user.firstname + ' ' + user.lastname
                             a(href='/logout') logout
                         else
                             .header_login_login-icon

@@ -39,11 +39,13 @@ router
   .post(viewController.registerHandle);
 router.get("/logout", viewController.logoutHandle);
 router.get("/cart", authMiddleware.requireAuth, viewController.cart);
-router.get("/admin_panel", viewController.admin_panel);
+router.get("/admin", viewController.adminPage);
 router
   .route("/payment")
   .get(viewController.checkout)
   .post(viewController.handleCheckout);
+
+router.get("/profile", authMiddleware.requireAuth, viewController.profile);
 
 router.get("*", viewController.errorPage);
 
