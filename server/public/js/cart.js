@@ -31,6 +31,14 @@ class LocalCart {
     );
     updateCartUI();
   }
+  static addQuantityInCart(id) {
+    let cart = LocalCart.getLocalCartItems();
+    if (cart.has(id)) {
+      let mapItem = cart.get(id);
+      mapItem.quantity =
+        Number(document.getElementsByClassName("print-quantity")[0].value)  
+        cart.set(id, mapItem);
+  }}
   static removeItemFromCart(id) {
     let cart = LocalCart.getLocalCartItems();
     if (cart.has(id)) {
@@ -188,9 +196,10 @@ function updateCartUI() {
       LocalCart.removeItemFromCart(key);
     });
     cartContainer.append(holder);
+    
   }
 
-  if (count > 0) {
+  if (count >= 0) {
     const subtotal = document.querySelector(".price-final");
     subtotal.innerHTML = total;
     let input = document.getElementsByClassName("print-quantity");
