@@ -85,13 +85,13 @@ module.exports = {
     }
   },
   loginHandle: async (req, res, next) => {
-    const user = await User.findOne({ email: req.body.email });
+    const user = await User.findOne({ email: req.body.email }); // tìm trong database là có email đó hay không
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
-    if (!validPassword && !user) {
-      return res.redirect("/login").end;
+    if (!validPassword || !user) {
+      return res.redirect("/login");
     } else {
       req.session.user = {
         firstname: user.firstname,
@@ -99,7 +99,6 @@ module.exports = {
         email: user.email,
       };
       const cookieUserId = res.cookie("user_id", user.id, { signed: true });
-      console.log(cookieUserId);
       return res.redirect(user.admin === true ? "/admin" : "/");
     }
   },
@@ -156,7 +155,9 @@ module.exports = {
   },
   checkout: async (req, res) => {
     try {
-      return res.status(200).render("payment");
+      return res.status(200).render("payment", {
+        title: "Payment",
+      });
     } catch (error) {
       return res.status(500).json(error);
     }

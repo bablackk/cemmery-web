@@ -32,7 +32,7 @@ router.get(
 router
   .route("/login")
   .get(viewController.login)
-  .post(viewController.loginHandle);
+  .post(viewController.loginHandle); // client
 router
   .route("/register")
   .get(viewController.register)
