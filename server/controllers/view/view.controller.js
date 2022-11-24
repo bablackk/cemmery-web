@@ -98,7 +98,8 @@ module.exports = {
         lastname: user.lastname,
         email: user.email,
       };
-      res.cookie("userId", user.id, { signed: true });
+      const cookieUserId = res.cookie("user_id", user.id, { signed: true });
+      console.log(cookieUserId);
       return res.redirect(user.admin === true ? "/admin" : "/");
     }
   },
@@ -131,7 +132,9 @@ module.exports = {
     }
   },
   logoutHandle: (req, res) => {
-    res.clearCookie("userId").redirect("/login");
+    res.clearCookie("user_id", { path: "*" });
+    req.session.destroy();
+    res.redirect("/login");
   },
   cart: async (req, res) => {
     try {

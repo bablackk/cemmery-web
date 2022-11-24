@@ -45,12 +45,13 @@ app.use(
 //config session in database
 app.use(
   session({
+    name: "session_id",
     secret: "dpql-key-session",
     resave: false,
     saveUninitialized: true,
     store,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7,
+      maxAge: 1000 * 60 * 60 * 24, // save session 1 day
       httpOnly: true,
       secure: false,
     },

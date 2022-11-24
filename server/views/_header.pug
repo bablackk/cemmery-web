@@ -78,8 +78,8 @@
                 .header_login-cart
                     .header_login
                         if user
-                            p=user.lastname
-                            p logout
+                            p=user.email
+                            a(href='/logout') logout
                         else
                             .header_login_login-icon
                                 i.bi.bi-box-arrow-in-right
