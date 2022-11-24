@@ -1270,6 +1270,41 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+/* dropdown-login */
+.dropdown-login-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-login-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropbtn{
+  cursor: pointer;
+
+}
+
+.dropdown-login-content a:hover {
+  background-color: rgba(69, 12, 12, 0.402);
+  color : white;
+}
+
+.show-login {
+  display: block;
+}
+.dropdown-login-content {
+  text-align: center;
+  font-size: 10px;
+}
 
   @media screen and (max-width: 1023px) {
     .header_upper {
