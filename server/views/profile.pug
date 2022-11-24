@@ -1,6 +1,7 @@
 extends base
 
 block content
-    p=user.lastname
-    p=user.firstname
-    p=user.email
+    .profile-container
+        p.profile-lastname=user.lastname
+        p.profile-firstname=user.firstname
+        p.profile-email=user.email

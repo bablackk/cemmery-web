@@ -1294,7 +1294,7 @@ input::-webkit-inner-spin-button {
 }
 
 .dropdown-login-content a:hover {
-  background-color: rgba(69, 12, 12, 0.402);
+  background-color: rgb(98, 193, 234);
   color : white;
 }
 
@@ -1305,6 +1305,15 @@ input::-webkit-inner-spin-button {
   text-align: center;
   font-size: 10px;
 }
+/* profile */
+
+.profile-container {
+  text-align: center;
+}
+
+
+
+
 
   @media screen and (max-width: 1023px) {
     .header_upper {
