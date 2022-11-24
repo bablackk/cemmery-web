@@ -1288,28 +1288,16 @@ input::-webkit-inner-spin-button {
   display: block;
   text-align: left;
 }
-.dropbtn{
-  cursor: pointer;
-
-}
 
 .dropdown-login-content a:hover {
-  background-color: rgb(98, 193, 234);
-  color : white;
+  background-color: rgb(60, 192, 244);
 }
 
 .show-login {
   display: block;
 }
-.dropdown-login-content {
-  text-align: center;
-  font-size: 10px;
-}
 /* profile */
 
-.profile-container {
-  text-align: center;
-}
 
 
 
