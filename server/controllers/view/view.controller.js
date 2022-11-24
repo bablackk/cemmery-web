@@ -98,7 +98,8 @@ module.exports = {
         lastname: user.lastname,
         email: user.email,
       };
-      res.cookie("userId", user.id, { signed: true });
+      const cookieUserId = res.cookie("user_id", user.id, { signed: true });
+      console.log(cookieUserId);
       return res.redirect(user.admin === true ? "/admin" : "/");
     }
   },
@@ -131,7 +132,9 @@ module.exports = {
     }
   },
   logoutHandle: (req, res) => {
-    res.clearCookie("userId").redirect("/login");
+    res.clearCookie("user_id", { path: "*" });
+    req.session.destroy();
+    res.redirect("/login");
   },
   cart: async (req, res) => {
     try {
@@ -142,7 +145,7 @@ module.exports = {
       res.status(500).json(error);
     }
   },
-  admin_panel: async (req, res) => {
+  adminPage: async (req, res) => {
     try {
       return res.status(200).render("admin_panel", {
         title: "Admin",
@@ -166,5 +169,14 @@ module.exports = {
     return res.status(404).render("error", {
       title: "Error",
     });
+  },
+  profile: async (req, res) => {
+    try {
+      res.status(200).render("profile", {
+        title: "Profile",
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
   },
 };
