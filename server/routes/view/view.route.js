@@ -47,6 +47,4 @@ router
 
 router.get("/profile", authMiddleware.requireAuth, viewController.profile);
 
-router.get("*", viewController.errorPage);
-
 module.exports = router;

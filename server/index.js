@@ -78,6 +78,12 @@ app.use("/", viewRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/admin", productRoute);
 app.use("/api/admin", userRoute);
+// handle error 404 page
+app.all("*", (req, res) => {
+  res.status(404).render("error", {
+    title: "Error",
+  });
+});
 // connect server
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);

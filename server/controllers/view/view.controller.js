@@ -86,6 +86,9 @@ module.exports = {
   },
   loginHandle: async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email }); // tìm trong database là có email đó hay không
+    if (!user) {
+      return res.redirect("/login");
+    }
     const validPassword = await bcrypt.compare(
       req.body.password,
       user.password
@@ -165,11 +168,6 @@ module.exports = {
   handleCheckout: async (req, res) => {
     try {
     } catch (error) {}
-  },
-  errorPage: async (req, res) => {
-    return res.status(404).render("error", {
-      title: "Error",
-    });
   },
   profile: async (req, res) => {
     try {
