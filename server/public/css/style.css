@@ -232,7 +232,7 @@ nav li ul li {
 }
 .product-name {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 .product-price{
   font-size: 15px;
@@ -1271,6 +1271,9 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 /* dropdown-login */
+.dropbtn {
+  cursor: pointer;
+}
 .dropdown-login-content {
   display: none;
   position: absolute;
@@ -1287,6 +1290,7 @@ input::-webkit-inner-spin-button {
   text-decoration: none;
   display: block;
   text-align: left;
+  transition: linear 0.3s;
 }
 
 .dropdown-login-content a:hover {
@@ -1298,10 +1302,32 @@ input::-webkit-inner-spin-button {
 }
 /* profile */
 
+.profile-container {
+  text-align: center;
+  margin : 0 auto;
+  background-color: #4bb6fa;
+  width: 30vw;
+  color : black;
+
+  
+}
+.profile-title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.profile-firstname ,.profile-lastname{
+font-size: 20px;
+font-weight: bold;
+}
 
 
-
-
+/* svg */
+.login-icon > svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 9px;
+}
 
   @media screen and (max-width: 1023px) {
     .header_upper {
