@@ -4,7 +4,7 @@ const rateLimit = require("express-rate-limit");
 const session = require("express-session");
 const mongoDBSession = require("connect-mongodb-session")(session);
 const cors = require("cors");
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 const morgan = require("morgan");
 const {
   PORT,
