@@ -73,7 +73,10 @@ a {
     display: none;
 
 }
-
+.footer3 > iframe {
+  width: 30vw;
+  height: 25vh;
+} 
 .hidden_header_login-cart > * {
     margin-left: 5px;
 }
@@ -1515,6 +1518,10 @@ font-weight: bold;
   }
   .hidden:hover{
       cursor: pointer;        
+  }
+  .footer3 > iframe {
+    width: 40vw;
+    height: 10vh;
   }
 }
 
