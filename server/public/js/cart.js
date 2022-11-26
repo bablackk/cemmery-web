@@ -200,7 +200,7 @@ function updateCartUI() {
                     <p class="size-properties">${value.size}</p>
                     <div class="detail-quantity">
                     <button type="button" class="subtract-btn" >-</button>
-                    <input type="number" class="print-quantity" value="${value.quantity}">             
+                    <input type="number" class="print-quantity" value="${value.quantity}" readonly>             
                     <button  type="button" class="add-btn" >+</button>           
                     
                         </div>
