@@ -1,6 +1,6 @@
 extends base
 block scripts
-    script(src="/js/cart.js")
+    script(src="/js/payment.js")
     
 block content
     .payment
@@ -21,14 +21,14 @@ block content
                     .content-hidden
                         .title-pay Th&ocirc;ng tin &dstrok;&#x1A1;n h&agrave;ng
                         .payment_product-holder  
-                                                  
+
                         .price-ship
                             p.name-price Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
-                            span 15.000&dstrok;
+                            span.shipping-price 
                         hr
                         .final-price
                             p.name-price T&#x1ED5;ng c&#x1ED9;ng
-                            span  140,000&dstrok;
+                            span.payment_final-price  
                 .next
                     a.back-cart(href='#') Quay l&#x1EA1;i gi&#x1ECF; h&agrave;ng
-                    button.btn-step-2 TI&#x1EBE;P T&#x1EE4;C &Dstrok;&#x1EBE;N PH&#x1AF;&#x1A0;NG TH&#x1EE8;C THANH TO&Aacute;N
+                    button.btn-step-2 XÁC NHẬN MUA HÀNG
