@@ -42,7 +42,7 @@ router.get("/cart", authMiddleware.requireAuth, viewController.cart);
 router.get("/admin", viewController.adminPage);
 router
   .route("/payment")
-  .get(viewController.checkout)
+  .get(authMiddleware.requireAuth, viewController.checkout)
   .post(viewController.handleCheckout);
 
 router.get("/profile", authMiddleware.requireAuth, viewController.profile);
