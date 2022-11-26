@@ -40,7 +40,7 @@ class LocalCart {
           LocalCart.key,
           JSON.stringify(Object.fromEntries(cart))
         );
-      updateCartUI();v
+      updateCartUI();
   
   }
   static addItemFromCart(id) {
@@ -101,7 +101,9 @@ function ready() {
     var button = addtoCartButtons[i];
     button.addEventListener("click", addToCartClicked);
   }
+
   updateCartUI();
+  updatePaymentUI();
 }
 
 let temp;
@@ -178,6 +180,7 @@ function updateCartUI() {
   const cartContainer = document.querySelector(".cart-container");
   cartContainer.innerHTML = "";
 
+
   const items = LocalCart.getLocalCartItems("cartItems");
   console.log(items);
   if (items === null) return;
@@ -237,5 +240,39 @@ function updateCartUI() {
       const subtotal = document.querySelector(".price-final");
       subtotal.innerHTML = total;
     });
+  }
+ 
+}
+function updatePaymentUI() {
+  const paymentContainer = document.querySelector(".payment_product-holder");
+  paymentContainer.innerHTML = "";
+  const items = LocalCart.getLocalCartItems("cartItems");
+  console.log(items);
+  console.log('hello')
+  if (items === null) return;
+  let count = 0;
+  let total = 0;
+  for (const [key, value] of items.entries()) {
+    const payment = document.createElement("div");
+    payment.classList.add("product");
+    let totalPrice = value.price * value.quantity;
+    count += 1;
+    total += totalPrice;
+    payment.innerHTML =`
+    <div class="img"><img class="img-product-pay" src="${value.img}" alt="hình ảnh"/></div>
+    <div class="properties">
+      <div class="title-properties">
+        <p class="name-properties">${value.name}</p>
+        <p class="size">${value.size}</p>
+        <p>S&#x1ED1; l&#x1B0;&#x1EE3;ng: <span>${value.quantity}</span></p>
+      </div>
+      <div class="price-properties"><span>${value.price}</span></div>
+    </div>
+    `
+    paymentContainer.append(payment)
+  }
+  if (count >= 0) {
+    const subtotal = document.querySelector(".payment_final-price");
+    subtotal.innerHTML = total;
   }
 }

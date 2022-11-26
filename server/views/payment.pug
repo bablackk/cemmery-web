@@ -1,5 +1,7 @@
 extends base
-
+block scripts
+    script(src="/js/cart.js")
+    
 block content
     .payment
         .content-payment
@@ -18,18 +20,8 @@ block content
                 .show-info-ship
                     .content-hidden
                         .title-pay Th&ocirc;ng tin &dstrok;&#x1A1;n h&agrave;ng
-                        .product
-                            .img
-                                img.img-product-pay(src='https://product.hstatic.net/200000259629/product/artboard_3_copy_2x-100_4f454fb927c3475c9b3161fc07898f23_grande.jpg' alt='hình ảnh')
-                            .properties
-                                .title-properties
-                                    p.name-properties SIGNATURE TEE 1.0 #White
-                                    p.size M
-                                    p
-                                        | S&#x1ED1; l&#x1B0;&#x1EE3;ng: 
-                                        span 1
-                                .price-properties
-                                    span 149,000&dstrok;
+                        .payment_product-holder  
+                                                  
                         .price-ship
                             p.name-price Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
                             span 15.000&dstrok;
