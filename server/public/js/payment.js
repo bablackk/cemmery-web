@@ -46,7 +46,7 @@ function updatePaymentUI() {
       }
       else {
         subtotal.innerHTML = total + shipping+"đ";
-        ship.innerHTML = shipping
+        ship.innerHTML = shipping+"đ"
       }
       
     }
