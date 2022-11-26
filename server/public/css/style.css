@@ -230,7 +230,7 @@ nav li ul li {
  
 }
 .product-list > a > img {
-  width: 13vw;
+  width: 13vw; 
   height: auto;
 }
 .product-name {

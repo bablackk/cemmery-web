@@ -31,14 +31,35 @@ class LocalCart {
     );
     updateCartUI();
   }
-  static addQuantityInCart(id) {
+  static deleteItemFromCart(id) {
+    let cart = LocalCart.getLocalCartItems();
+      cart.delete(id);
+      if (cart.length === 0) localStorage.clear();
+      else
+        localStorage.setItem(
+          LocalCart.key,
+          JSON.stringify(Object.fromEntries(cart))
+        );
+      updateCartUI();v
+  
+  }
+  static addItemFromCart(id) {
     let cart = LocalCart.getLocalCartItems();
     if (cart.has(id)) {
       let mapItem = cart.get(id);
-      mapItem.quantity =
-        Number(document.getElementsByClassName("print-quantity")[0].value)  
+      if (mapItem.quantity > 1) {
+        mapItem.quantity += 1;
         cart.set(id, mapItem);
-  }}
+      } 
+    }
+    if (cart.length === 0) localStorage.clear();
+    else
+      localStorage.setItem(
+        LocalCart.key,
+        JSON.stringify(Object.fromEntries(cart))
+      );
+    updateCartUI();
+  } 
   static removeItemFromCart(id) {
     let cart = LocalCart.getLocalCartItems();
     if (cart.has(id)) {
@@ -178,8 +199,9 @@ function updateCartUI() {
                     <p class="price-properties">${value.price}</p>
                     <p class="size-properties">${value.size}</p>
                     <div class="detail-quantity">
-                    <h6>Số lượng</h6>
-                        <input type="number" class="print-quantity" name="" id="I-print-quantity" value="${value.quantity}" >             
+                    <button type="button" class="subtract-btn" >-</button>
+                    <input type="number" class="print-quantity" value="${value.quantity}">             
+                    <button  type="button" class="add-btn" >+</button>           
                     
                         </div>
                 </div>
@@ -192,9 +214,17 @@ function updateCartUI() {
                 
             </div>`;
 
-    holder.lastElementChild.lastElementChild.addEventListener("click", () => {
+    holder.lastElementChild.firstElementChild.lastElementChild.firstElementChild.addEventListener("click", () => {
       LocalCart.removeItemFromCart(key);
     });
+    holder.lastElementChild.lastElementChild.addEventListener("click" ,() => {
+      LocalCart.deleteItemFromCart(key);
+    })
+    holder.lastElementChild.firstElementChild.lastElementChild.lastElementChild.addEventListener("click", () => {
+      LocalCart.addItemFromCart(key);
+    });
+
+
     cartContainer.append(holder);
     
   }
