@@ -1,3 +1,4 @@
+
 .notify#notify
     span Miễn phí vận chuyển cho đơn hàng trên 500k
 .home-Layout
@@ -42,7 +43,7 @@
                 .header_cart
                     .cart-icon
                         a(href='')
-                            i.bi.bi-cart-plus
+                            i.bi.bi-bag-plus
                             span Giỏ hàng
                     .cart-popup
                     
@@ -99,6 +100,126 @@
                                     a(style='font-size: 16px;' href='/register')  Đăng ký
                                 .header_login_login-text
                     .header_cart
-                        a(href='/cart')
-                            i.bi.bi-cart-plus
-                            span(style='font-size: 14px;') Giỏ Hàng
+                        .header-cart-container
+                            a(href='/cart')
+                                i.bi.bi-cart-plus.none-empty 
+                                span(style='font-size: 14px;') Giỏ Hàng
+                        .cart-window.hidden
+                            h2.shopping-cart-title Shopping Cart
+                            .cart_over-wrapper
+                                //- .cart-wrapper
+                                //-     .mini-cart_items
+                                //-         img.cart-item_img(src='https://product.hstatic.net/200000259629/product/artboard_3_copy_5_2x-100_1a427f812af040b08088a2b712b2797a_grande.jpg' alt='')
+                                //-         .mini-cart_detail
+                                //-             .details
+                                //-             h6.cart-items-name Test Item
+                                //-             p.cart_price-quantity-size
+                                //-                 span.cart-items-price 12000
+                                //-                 span.cart-items-quantity Quantity : 2
+                                //-                 span.cart-items-size  Size : S
+                                //-     .mini-cart_cancel
+                                //-         svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                                //-         // ! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
+                                //-         path(d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z')
+                                //-     .mini-cart_items
+                                //-         img.cart-item_img(src='https://product.hstatic.net/200000259629/product/artboard_3_copy_5_2x-100_1a427f812af040b08088a2b712b2797a_grande.jpg' alt='')
+                                //-         .mini-cart_detail
+                                //-             .details
+                                //-             h3.cart-items-name Test Item
+                                //-             p.cart_price-quantity-size
+                                //-                 span.cart-items-price 12000
+                                //-                 span.cart-items-quantity Quantity : 2
+                                //-                 span.cart-items-size  Size : S
+                                //-     .mini-cart_cancel
+                                //-         svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                                //-         // ! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
+                                //-         path(d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z')
+                            .subtotal
+                                
+                            .checkout-btn Checkout
+                            .view-cart-btn View Cart
+
+script.
+  
+    class LocalCart1 {
+    static key = "cartItems";
+    static getLocalCartItems() {
+      let cartMap = new Map();
+      const cart = localStorage.getItem(LocalCart1.key);
+      if (cart === null || cart.length === 0) return cartMap;
+  
+      return new Map(Object.entries(JSON.parse(cart)));
+        }
+    }
+    
+    const cartIcon =  document.querySelector('.bi-cart-plus');
+    const cartWindow = document.querySelector('.cart-window');
+    cartWindow.inWindow = 0;
+        cartIcon.addEventListener('mouseover', () => {
+            if(cartWindow.classList.contains('hidden')){
+                cartWindow.classList.remove('hidden');
+            }
+        } )
+        cartIcon.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                if(cartWindow.inWindow ==0 ) {
+
+                cartWindow.classList.add('hidden');
+                }
+            },500)
+        })
+        cartWindow.addEventListener('mouseover', () => {
+            cartWindow.inWindow = 1;
+        })
+        cartWindow.addEventListener('mouseleave', () => {
+        cartWindow.inWindow = 0;
+        cartWindow.classList.add('hidden')
+        })
+
+
+        function updateMiniCart() {
+        const miniCartContainer = document.querySelector(".cart_over-wrapper");
+        miniCartContainer.innerHTML = "";
+        const items =LocalCart1.getLocalCartItems('cartItems')
+        console.log(items)
+        if (items === null) return;
+        let count = 0;
+        let total = 0;   
+        for (const [key, value] of items.entries()) {
+        const miniCart = document.createElement("div");
+        miniCart.classList.add("cart-wrapper");
+        let totalPrice = value.price * value.quantity;
+        count += 1;
+        total += totalPrice;
+        miniCart.innerHTML =`
+        <div class="cart-wrapper">
+            <div class="mini-cart_items"><img class="cart-item_img" src="${value.img}" alt="" />
+                <div class="mini-cart_detail">
+                    <div class="details">
+                    <h6 class="cart-items-name">${value.name}</h6>
+                    <p class="cart_price-quantity-size"><span class="cart-items-price">${value.price}</span><span class="cart-items-quantity">Quantity : ${value.quantity}</span><span class="cart-items-size"> Size : ${value.size}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-cart_cancel"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512"></svg><!-- ! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
+                <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"></path>
+            </div>
+        </div>
+        `
+        miniCartContainer.append(miniCart)
+        }
+
+        if (count >= 0) {
+        const subtotal = document.querySelector(".subtotal");
+        subtotal.innerHTML = total+"đ";
+        
+        }
+        } 
+        if (document.readyState == "loading") {
+        document.addEventListener("DOMContentLoaded", ready);
+        } else {
+        ready();
+        }
+        function ready() {
+            updateMiniCart();
+        }

@@ -6,6 +6,10 @@
     font-weight: normal;
     font-size: 15px;
 }
+:root {
+  --after-content : "2";
+}
+
 @font-face {
     font-family: Helvetica;
     src: url("../fonts/*") format("truetype");
@@ -55,13 +59,17 @@ a {
     color: black;
 }
 .header_login-cart {
-    display: flex;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 30vw;
     height: 100%;
     font-size: 0.75em;
-    
 }
-.header_login-cart- > * {
-    margin-left: 1em;
+.header_login {
+ position: relative;
+ width: 100%;
+ margin-left : 2vw;
 }
 .header_login_login-icon {
     margin-bottom: 10px;
@@ -85,9 +93,7 @@ a {
     margin-top: 10px;
 }
 
-.header_login-cart > div {
-    margin-right: 20px;
-}
+
 .header_search-box {
     display: flex;
     align-items: center;
@@ -107,8 +113,10 @@ a {
     border-radius: 5px;
     border: 0.25px solid rgb(46, 16, 16);
 }
+
 .nav-item:after,
 .dropdown-item:after {
+    z-index: 999999;
     content: "";
     position: absolute;
     width: 100%;
@@ -128,19 +136,18 @@ a:hover::after {
 nav ul {
     -webkit-font-smoothing: antialiased;
     list-style: none;
-
     width: 100%;
 }
 nav li {
     float: left;
     position: relative;
 }
-nav a {
-    font-size: 16px;
+nav a { 
+
     color: black;
     display: block;
     font: normal 18px/50px Arial, Helvetica, sans-serif;
-    padding: 4px 28px;
+    padding: 4px 15px;
     text-align: center;
     text-decoration: none;
     -webkit-transition: all 0.25s ease;
@@ -161,12 +168,16 @@ nav li:hover .nav-item {
     color: black;
     font-weight: bold;
     text-align: center;
+    width: 100%;
+    height: 100%;
+
 }
 .dropdown-item:hover {
     color: rgb(40, 176, 207);
     background-color: white;
 }
 nav li ul {
+
     float: left;
     left: 0;
     width: 150%;
@@ -188,7 +199,6 @@ nav li:hover ul {
 }
 nav li ul li {
     float: none;
-    width: 100%;
 }
 
 .cf:after,
@@ -308,9 +318,13 @@ a {
 .navbar {
     background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 999;
+    width: 100vw;
+}
+.nav {
+  width: 70vw;
 }
 .sticky {
     position: fixed;
@@ -1328,6 +1342,109 @@ font-weight: bold;
   height: 20px;
   margin-right: 5px;
   margin-bottom: 9px;
+}
+/* popup-cart */
+
+
+.header_cart{
+  position: absolute;
+  width:  19vw;
+  margin-left:11vw;
+  z-index: 999;
+
+}
+
+.shopping-cart-title {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  padding : 15px 10px;
+}
+.cart_over-wrapper {
+  overflow-y: auto;
+  max-height: 350px;
+}
+.subtotal {
+  font-size: 15px;
+  text-align: right;
+  padding : 5%;
+}.checkout-btn , .view-cart-btn {
+  width: 95%;
+  text-align: center;
+  cursor: pointer;;
+  background-color: red;
+  font-size: 18px;
+  color : white;
+  margin : 10px auto;
+  padding : 5px 15px;
+}
+.view-cart-btn {
+  background-color: white ;
+  border : 2px solid  red;
+  color : brown;
+}
+.mini-cart_items {
+  display : grid;
+  grid-template-columns: 3fr 6fr 1fr;
+  padding : 5% 2%;
+  border-bottom: solid 1px lightgray;;
+  
+}
+.mini-cart_items img {
+  width: 90%;
+}
+.mini-cart_items detail {
+ padding-left : 10%
+}
+.mini-cart_items h3 {
+  text-align-last: left;
+}
+.cart_price-quantity-size{
+  display: flex;
+  flex-direction: column;;
+  
+}
+.cart-items-price , .cart-items-size, .cart-items-quantity {
+  font-size: 13px;
+  text-align: left;;
+  margin-left: 10px;
+}
+.header-lower {
+  width: 100vw;
+}
+
+.header-cart-container {
+  margin-left: 100px;
+}
+.mini-cart_cancel > svg {
+  width: 20px;
+  height: 20px;
+  background-color:rgb(253, 247, 247) !important;;
+  color : white
+}
+
+.cart-window {
+  border : solid lightgray 1px;
+  border-top : none;
+  margin : 10px;
+  background-color: white;
+}
+
+.hidden {
+  display: none;  
+}
+.none-empty::after {
+content : var(--after-content);
+font-size: 10px;
+width: 15px;
+height: 15px;
+display: inline-block;
+text-align: center;
+position: relative;
+top:-10px;
+right: 2%;
+background-color: red;
+border-radius: 50%;
 }
 
   @media screen and (max-width: 1023px) {
