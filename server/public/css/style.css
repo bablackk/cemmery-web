@@ -7,7 +7,7 @@
     font-size: 15px;
 }
 :root {
-  --after-content : "2";
+  --after-content : "";
 }
 
 @font-face {
@@ -657,8 +657,12 @@ html {
     border: #4bb6fa;
   }
   .add-cart-btn:hover {
-    background-color: #077dc6;
+    background-color: white;
     cursor: pointer;
+    border : 2px solid #4bb6fa;
+  }
+  .add-cart-btn:active {
+    opacity: 0;
   }
   .related-title {
     font-size: 30px;
@@ -1368,20 +1372,51 @@ font-weight: bold;
   font-size: 15px;
   text-align: right;
   padding : 5%;
-}.checkout-btn , .view-cart-btn {
-  width: 95%;
+  
+}
+.mini-cart-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkout-btn ,.update-mini-cart, .view-cart-btn {
   text-align: center;
   cursor: pointer;;
-  background-color: red;
+  background-color: #4bb6fa;
   font-size: 18px;
   color : white;
   margin : 10px auto;
-  padding : 5px 15px;
+  padding : 7px 10px;
+}
+
+.update-mini-cart {
+  border : 2px solid #4bb6fa;
+}
+.update-mini-cart:hover {
+  background-color: white;
+}
+.checkout-btn {
+  background-color:#ff0000; ;
+  border : 2px solid  #ff0000;
+  color : white;
 }
 .view-cart-btn {
-  background-color: white ;
-  border : 2px solid  red;
-  color : brown;
+  background-color:#ff0000; ;
+  border : 2px solid  #ff0000;
+  color : white;
+}
+.checkout-btn:hover {
+  color : black;
+  background-color: white;
+}
+.view-cart-btn:hover{
+
+  background-color: white;
+  border : 2px solid red;
+  color : black;
+}
+.view-cart-btn:active, .checkout-btn:active,.update-mini-cart:active {
+  opacity: 0.5;
 }
 .mini-cart_items {
   display : grid;
@@ -1447,6 +1482,36 @@ background-color: red;
 border-radius: 50%;
 }
 
+/* thanks */
+
+.thanks-page{
+  font-family: "Helvetica Neue", sans-serif;
+  padding-top: 100px;
+  text-align: center;
+  margin-bottom: 20vh;
+}
+.thanks-img{
+  width: 150px;    
+}
+.completed{
+  font-size: 40px;
+  color: #4aa6fa;
+}
+.thanks-btn{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  color: #4aa6fa;
+  background-color:white;
+  border: 1.5px solid #4aa6fa;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.thanks-btn:hover{
+  background-color: #4aa6fa;
+  color: white;
+}
+
   @media screen and (max-width: 1023px) {
     .header_upper {
         flex-direction: column;
@@ -1482,7 +1547,13 @@ border-radius: 50%;
     }
     .hidden_header_login-cart {
         display: flex;
+        justify-content: flex-end;
     }
+    .hidden-header_login {
+      margin-right: 13vw;
+      margin-bottom: 2vh;
+    }
+
     .header_hotline {
         margin-left: 4em;
     }

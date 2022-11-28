@@ -29,23 +29,23 @@
                 img.header_logo(src='https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.15752-9/307853364_598510478719925_2958582378382186153_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_ohc=avxTW-TxJlEAX_JfAdN&_nc_ht=scontent.fsgn4-1.fna&oh=03_AdSEyoN4nkmMfgVHq5WISUAoF-uMPgqamw5lEhQRIsPukA&oe=63875774' alt='')
 
             .hidden_header_login-cart
-                if user
-                    p.login-title=`Hello ${user.firstname} ${user.lastname}!`
-                    a(href='/logout') <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>Logout
-                else
-                    .header_login
-                        .header_login_login-icon
-                            i.bi.bi-box-arrow-in-right 
-                            a.login
-                                a(href='/login') Đăng nhập /
-                                a(href='/register') Đăng kí
-                            .header_login_login-text
-                .header_cart
+                .hidden-header_login
+                    if user
+                        p.login-title=`Hello ${user.firstname} ${user.lastname}!`
+                        a(href='/logout') <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>Logout
+                    else
+                        .header_login
+                            .header_login_login-icon
+                                i.bi.bi-box-arrow-in-right 
+                                a.login
+                                    a(href='/login') Đăng nhập /
+                                    a(href='/register') Đăng kí
+                                .header_login_login-text
+                .hidden-header_cart
                     .cart-icon
                         a(href='')
                             i.bi.bi-bag-plus
                             span Giỏ hàng
-                    .cart-popup
                     
             .header_search-box
                 form.header_search-box_container
@@ -84,7 +84,7 @@
                     .header_login
                         if user
                             .dropdown-login
-                            span.login-icon                                                            
+                            span.login-icon                      
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
                             a.dropbtn(onmouseover='myFunction1()' onmouseout='')=`Hello: ${user.lastname}!`
                             #myDropdown1.dropdown-login-content
@@ -102,7 +102,7 @@
                     .header_cart
                         .header-cart-container
                             a(href='/cart')
-                                i.bi.bi-cart-plus.none-empty 
+                                i.bi.bi-cart-plus
                                 span(style='font-size: 14px;') Giỏ Hàng
                         .cart-window.hidden
                             h2.shopping-cart-title Shopping Cart
@@ -136,24 +136,40 @@
                                 //-         path(d='M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z')
                             .subtotal
                                 
-                            .checkout-btn Checkout
-                            .view-cart-btn View Cart
+                            .mini-cart-button 
+                                a.checkout-btn(href="/payment") Checkout
+                                a.update-mini-cart(onclick="updateMiniCart()") Update
+                                a.view-cart-btn(href="/cart")   View Cart
+                               
 
 script.
-  
+    if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", ready);
+    } else {
+    ready();
+    }   
+    function ready() {
+    updateMiniCart();
+    const update = document.querySelector('.update-mini-cart')
+    update.addEventListener("click", () => {
+    updateMiniCart();
+    })
+
+    }
     class LocalCart1 {
     static key = "cartItems";
     static getLocalCartItems() {
-      let cartMap = new Map();
-      const cart = localStorage.getItem(LocalCart1.key);
-      if (cart === null || cart.length === 0) return cartMap;
+    let cartMap = new Map();
+    const cart = localStorage.getItem(LocalCart1.key);
+    if (cart === null || cart.length === 0) return cartMap;
   
-      return new Map(Object.entries(JSON.parse(cart)));
+    return new Map(Object.entries(JSON.parse(cart)));
         }
     }
     
-    const cartIcon =  document.querySelector('.bi-cart-plus');
+    const cartIcon =  document.querySelector('.header-cart-container');
     const cartWindow = document.querySelector('.cart-window');
+    
     cartWindow.inWindow = 0;
         cartIcon.addEventListener('mouseover', () => {
             if(cartWindow.classList.contains('hidden')){
@@ -189,7 +205,7 @@ script.
         const miniCart = document.createElement("div");
         miniCart.classList.add("cart-wrapper");
         let totalPrice = value.price * value.quantity;
-        count += 1;
+        count += value.quantity;
         total += totalPrice;
         miniCart.innerHTML =`
         <div class="cart-wrapper">
@@ -210,16 +226,18 @@ script.
         }
 
         if (count >= 0) {
+        const miniCartIcon = document.querySelector('.bi-cart-plus')
         const subtotal = document.querySelector(".subtotal");
         subtotal.innerHTML = total+"đ";
         
+        miniCartIcon.classList.add('none-empty') 
+        let root = document.querySelector(':root')
+        console.log(root)
+        root.style.setProperty('--after-content' , `"${count}"`)
+        
         }
-        } 
-        if (document.readyState == "loading") {
-        document.addEventListener("DOMContentLoaded", ready);
-        } else {
-        ready();
+        else {
+            miniCartIcon.classList.remove('none-empty')
         }
-        function ready() {
-            updateMiniCart();
         }
+       
