@@ -102,7 +102,7 @@ module.exports = {
         email: user.email,
       };
       const cookieUserId = res.cookie("user_id", user.id, { signed: true });
-      return res.redirect(user.admin === true ? "/admin" : "/");
+      res.redirect(user.admin === true ? "/admin" : "/");
     }
   },
   register: async (req, res) => {
@@ -173,6 +173,21 @@ module.exports = {
     try {
       res.status(200).render("profile", {
         title: "Profile",
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+  search: async (req, res) => {
+    try {
+      const [product] = await Product.find();
+      const title = req.query.productName.toLowerCase();
+      const productFormatName = product.filter((item) => {
+        return item.productName.toLowerCase();
+      });
+      const findProducts = await productFormatName.find({ productName: title });
+      res.render("/search", {
+        findProducts,
       });
     } catch (error) {
       res.status(500).json(error);

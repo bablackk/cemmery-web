@@ -1,0 +1,13 @@
+extends base
+
+block content
+    each product in findProducts
+        .product-list
+            a.product-list(href=`/product/${product.id}`)
+                img(src=`${product.thumbnail}` alt='').product-thumbnail
+                img(src=`${product.thumbnailAfter}` alt='').product-thumbnailAfter
+                h5.product-name=product.productName
+                - let price = product.price;
+                - let config = { style: 'currency', currency: 'VND'};
+                - let formated = new Intl.NumberFormat('vi-VN', config).format(price).replace(/\s/g, '');
+                p.product-price=`${formated}`

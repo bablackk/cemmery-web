@@ -46,5 +46,6 @@ router
   .post(viewController.handleCheckout);
 
 router.get("/profile", authMiddleware.requireAuth, viewController.profile);
+router.get("/search:productName", viewController.search);
 
 module.exports = router;
