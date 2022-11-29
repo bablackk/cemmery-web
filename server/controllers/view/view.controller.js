@@ -1,5 +1,6 @@
 const Product = require("../../models/admin/product.model");
 const User = require("../../models/user.model");
+const Order = require("../../models/order.model");
 const bcrypt = require("bcrypt");
 
 module.exports = {
@@ -167,7 +168,21 @@ module.exports = {
   },
   handleCheckout: async (req, res) => {
     try {
-    } catch (error) {}
+      const newOrder = await new Order({
+        fullName: req.body.fullName,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        address: req.body.address,
+        productOrder: req.body.productOrder,
+        size: req.body.size,
+        quantity: req.body.quantity,
+        totalMoney: req.body.totalMoney,
+      });
+      const order = await newOrder.save();
+      res.status(200).redirect("/payment/thanks");
+    } catch (error) {
+      res.status(500).json(error);
+    }
   },
   profile: async (req, res) => {
     try {
@@ -192,5 +207,10 @@ module.exports = {
     } catch (error) {
       res.status(500).json(error);
     }
+  },
+  thanks: (req, res) => {
+    res.status(200).render("thanks", {
+      title: "Thanks",
+    });
   },
 };

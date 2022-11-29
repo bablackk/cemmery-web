@@ -47,5 +47,6 @@ router
 
 router.get("/profile", authMiddleware.requireAuth, viewController.profile);
 router.get("/search:productName", viewController.search);
+router.get("/payment/thanks", viewController.thanks);
 
 module.exports = router;

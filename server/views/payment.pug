@@ -3,30 +3,32 @@ block scripts
     script(src="/js/payment.js")
     
 block content
-    .payment
-        .content-payment
-            .info-ship
-                a.title-payment(href='#') DPQL
-                p.title-ship Th&ocirc;ng tin giao h&agrave;ng
-              
-                .input-info
-                    input.input-info-ship(type='text' placeholder='Họ và tên', required=true)
-                    input.input-info-ship(type='text' placeholder='Email' required=true)
-                    input.input-info-ship(type='text' placeholder='Số điện thoại' required=true)
-                    input.input-info-ship(type='text' placeholder='Địa chỉ' required=true)
-            .info-order
-                .show-info-ship
-                    .content-hidden
-                        .title-pay Th&ocirc;ng tin &dstrok;&#x1A1;n h&agrave;ng
-                        .payment_product-holder  
+    form(action="/payment", method='POST').form-payment
+        .payment
+            .content-payment
+                .info-ship
+                    a.title-payment(href='#') DPQL
+                    p.title-ship Th&ocirc;ng tin giao h&agrave;ng
 
-                        .price-ship
-                            p.name-price Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
-                            span.shipping-price 
-                        hr
-                        .final-price
-                            p.name-price T&#x1ED5;ng c&#x1ED9;ng
-                            span.payment_final-price  
-                .next
-                    a.back-cart(href='#') Quay l&#x1EA1;i gi&#x1ECF; h&agrave;ng
-                    button.btn-step-2 XÁC NHẬN MUA HÀNG
+                    .input-info
+                        input.input-info-ship(type='text' placeholder='Họ và tên', required=true value=value=`${user.firstname} ${user.lastname}` name='fullName' )
+                        input.input-info-ship(type='text' placeholder='Email' required=true value=`${user.email}` name='email')
+                        input.input-info-ship(type='text' placeholder='Số điện thoại' required=true name='phoneNumber')
+                        input.input-info-ship(type='text' placeholder='Địa chỉ' required=true name='address')
+                .info-order
+                    .show-info-ship
+                        .content-hidden
+                            .title-pay Th&ocirc;ng tin &dstrok;&#x1A1;n h&agrave;ng
+                            .payment_product-holder
+
+                            .price-ship
+                                p.name-price Ph&iacute; v&#x1EAD;n chuy&#x1EC3;n
+                                span.shipping-price
+                            hr
+                            .final-price
+                                p.name-price T&#x1ED5;ng c&#x1ED9;ng
+                                span.payment_final-price
+                                input(style='display: none' type='text' name='totalMoney' class='input-totalMoney')
+                    .next
+                        a.back-cart(href='#') Quay l&#x1EA1;i gi&#x1ECF; h&agrave;ng
+                        button(type='submit').btn-step-2 XÁC NHẬN MUA HÀNG
