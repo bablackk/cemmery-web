@@ -62,7 +62,7 @@ a {
 
     display: grid;
     grid-template-columns: 40% 60%;
-    width: 30vw;
+    width: 25vw;
     height: 100%;
     font-size: 0.75em;
 }
