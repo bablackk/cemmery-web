@@ -377,8 +377,9 @@ a {
     font-size: 20px;
 }
 .split {
+    
     margin: 50px 0;
-    border: 10px solid green;
+    border: 5px solid #14cbf0;
     border-radius: 5px;
 }
 
@@ -905,7 +906,7 @@ html {
   .mini-title {
     width: 60vh;
   }
-  /* admin pannel */
+  /* admin pannel */  
   .ad-left_header {
     display: flex;
     flex-direction: row;
@@ -1383,7 +1384,8 @@ font-weight: bold;
   text-align: center;
   cursor: pointer;;
   background-color: #4bb6fa;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: bold;
   color : white;
   margin : 10px auto;
   padding : 7px 10px;
