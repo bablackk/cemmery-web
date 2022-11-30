@@ -1,32 +1,36 @@
-.backchome-products
-    a.backhome(href='/dpql-ecommerce/client/web/admin-pannel/page/pannel.html') Quay l&#x1EA1;i trang ch&#x1EE7;
-.add-products
-    p.header-add-product-admin CEMMERY
-    p.title-add-product /Add Products/
-.main-content-add
-    fieldset.add-content-product
-        legend Th&ocirc;ng tin s&#x1EA3;n ph&#x1EA9;m
-        p
-            span.content-add &#x1EA2;nh tr&#x1B0;&#x1EDB;c:
-            input.add-product-input(type='file')
-        p
-            span.content-add &#x1EA2;nh sau:
-            input.add-product-input(type='file')
-        p
-            span.content-add T&ecirc;n s&#x1EA3;n ph&#x1EA9;m:
-            input.add-product-input(type='text')
-        p
-            span.content-add Lo&#x1EA1;i s&#x1EA3;n ph&#x1EA9;m
-            select(name='' id='')
-                option(value='') Tops
-                option(value='') Bottom
-                option(value='') Outerwear
-        p
-            span.content-add Gi&aacute;:
-            input.add-product-input(type='number' min='0')
-        p
-            span.content-add M&ocirc; t&#x1EA3;:
-            textarea.add-product-input(type='text')
-        .add-product-btn-admin
-            button.add-product-btn(type='reset') Reset
-            button.add-product-btn(type='submit') Save
+extends base_admin
+
+block content
+
+    .backchome-products
+        a.backhome(href='/dpql-ecommerce/client/web/admin-pannel/page/pannel.html') Quay l&#x1EA1;i trang ch&#x1EE7;
+    .add-products
+        p.header-add-product-admin CEMMERY
+        p.title-add-product /Add Products/
+    .main-content-add
+        fieldset.add-content-product
+            legend Th&ocirc;ng tin s&#x1EA3;n ph&#x1EA9;m
+            p
+                span.content-add &#x1EA2;nh tr&#x1B0;&#x1EDB;c:
+                input.add-product-input(type='file')
+            p
+                span.content-add &#x1EA2;nh sau:
+                input.add-product-input(type='file')
+            p
+                span.content-add T&ecirc;n s&#x1EA3;n ph&#x1EA9;m:
+                input.add-product-input(type='text')
+            p
+                span.content-add Lo&#x1EA1;i s&#x1EA3;n ph&#x1EA9;m
+                select(name='' id='')
+                    option(value='') Tops
+                    option(value='') Bottom
+                    option(value='') Outerwear
+            p
+                span.content-add Gi&aacute;:
+                input.add-product-input(type='number' min='0')
+            p
+                span.content-add M&ocirc; t&#x1EA3;:
+                textarea.add-product-input(type='text')
+            .add-product-btn-admin
+                button.add-product-btn(type='reset') Reset
+                button.add-product-btn(type='submit') Save

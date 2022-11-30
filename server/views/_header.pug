@@ -197,7 +197,7 @@ script.
         const miniCartContainer = document.querySelector(".cart_over-wrapper");
         miniCartContainer.innerHTML = "";
         const items =LocalCart1.getLocalCartItems('cartItems')
-        console.log(items)
+      
         if (items === null) return;
         let count = 0;
         let total = 0;   
@@ -232,7 +232,7 @@ script.
         
         miniCartIcon.classList.add('none-empty') 
         let root = document.querySelector(':root')
-        console.log(root)
+      
         root.style.setProperty('--after-content' , `"${count}"`)
         
         }
