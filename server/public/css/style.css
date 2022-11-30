@@ -906,6 +906,7 @@ html {
   .mini-title {
     width: 60vh;
   }
+<<<<<<< HEAD
   /* admin pannel */  
   .ad-left_header {
     display: flex;
@@ -1042,6 +1043,9 @@ html {
     background-color: #fbab7e;
     background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
   }
+=======
+  /* admin pannel */
+>>>>>>> 0f3b7f233a556a07f8fd360e99d1820003444440
   
   /* cart */
   

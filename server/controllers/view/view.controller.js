@@ -150,7 +150,7 @@ module.exports = {
   },
   adminPage: async (req, res) => {
     try {
-      return res.status(200).render("admin_panel", {
+      return res.status(200).render("admin/home", {
         title: "Admin",
       });
     } catch (error) {

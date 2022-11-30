@@ -1,0 +1,32 @@
+.backchome-products
+    a.backhome(href='/dpql-ecommerce/client/web/admin-pannel/page/pannel.html') Quay l&#x1EA1;i trang ch&#x1EE7;
+.edit-products
+    p.header-edit-product-admin CEMMERY
+    p.title-edit-product /Edit Products/
+.main-content-edit
+    fieldset.edit-content-product
+        legend Th&ocirc;ng tin s&#x1EA3;n ph&#x1EA9;m
+        p
+            span.content-edit &#x1EA2;nh tr&#x1B0;&#x1EDB;c:
+            input.edit-product-input(type='file')
+        p
+            span.content-edit &#x1EA2;nh sau:
+            input.edit-product-input(type='file')
+        p
+            span.content-edit T&ecirc;n s&#x1EA3;n ph&#x1EA9;m:
+            input.edit-product-input(type='text')
+        p
+            span.content-edit Lo&#x1EA1;i s&#x1EA3;n ph&#x1EA9;m:
+            select(name='' id='')
+                option(value='') Tops
+                option(value='') Bottom
+                option(value='') Outerwear
+        p
+            span.content-edit Gi&aacute;:
+            input.edit-product-input(type='number' min='0')
+        p
+            span.content-edit M&ocirc; t&#x1EA3;:
+            textarea.edit-product-input(type='text')
+        .edit-product-btn-admin
+            button.edit-product-btn(type='reset') Reset
+            button.edit-product-btn(type='submit') Save
