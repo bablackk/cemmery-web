@@ -125,10 +125,10 @@ ul li {
 .shower-item:nth-child(1) {
   background-color: #4158d0;
   background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
   );
 }
 .shower-item:nth-child(2) {
@@ -160,8 +160,8 @@ ul li {
 }
 .backhome:hover{
   color: #135882;
-  
-} 
+
+}
 .admin-product_header{
   font-size: 70px;
   text-align: center;
@@ -173,10 +173,10 @@ ul li {
   font-size: 20px;
   background-color: #4bb6fa;
   color: white;
-  padding: 10px;  
+  padding: 10px;
   cursor: pointer;
   margin-left: 14px;
-  margin-bottom: 10px;                                     
+  margin-bottom: 10px;
 }
 .admin-product_btn-add:hover{
   background-color: white;
@@ -190,7 +190,7 @@ ul li {
   grid-row-gap:20px;
   justify-items: center;
 }
-.admin-product_main{    
+.admin-product_main{
   width: 270px;
   box-shadow: 5px 5px 5px 1px rgb(109, 110, 111);
 }
@@ -199,7 +199,7 @@ ul li {
 }
 .admin-product_name{
   font-size: 25px;
-  font-weight: 600;    
+  font-weight: 600;
 }
 .admin-product_price{
   font-size: 20px;
@@ -221,15 +221,15 @@ ul li {
   font-size: 20px;
   background-color: white;
   color: #4bb6fa;
-  padding: 2px;  
-  cursor: pointer; 
+  padding: 2px;
+  cursor: pointer;
   margin: 2px;
 }
 .admin-product_btn:hover{
   background-color: #4bb6fa;
   color: white;
   border: 1px solid #4bb6fa;
-}  
+}
 /* order */
 /* *{
     margin: 0px;
@@ -249,7 +249,7 @@ ul li {
 }
 .admin-order_header{
   font-size: 70px;
-  font-weight: 700; 
+  font-weight: 700;
   padding: 30px;
   text-align: center;
 }
@@ -276,7 +276,7 @@ ul li {
   border-right: 1px solid black;
   height: 100%;
   justify-items: center;
-  
+
 }
 .admin-order_info{
   border: 1px solid grey;
@@ -337,7 +337,7 @@ ul li {
 }
 .content-add{
   width: 150px;
-  display:inline-block;    
+  display:inline-block;
 }
 .add-product-btn-admin{
   display: flex;
@@ -359,8 +359,8 @@ ul li {
 }
 @media screen and (max-width:499px){
   .main-content-add{
-      width: 100%;
-      margin: 0px;
+    width: 100%;
+    margin: 0px;
   }
 }
 /* edit product */
@@ -404,7 +404,7 @@ ul li {
 }
 .content-edit{
   width: 150px;
-  display:inline-block;    
+  display:inline-block;
 }
 .edit-product-btn-admin{
   display: flex;
@@ -427,7 +427,7 @@ ul li {
 }
 @media screen and (max-width:499px){
   .main-content-edit{
-      width: 100%;
-      margin: 0px;
+    width: 100%;
+    margin: 0px;
   }
 }
