@@ -244,9 +244,6 @@ ul li {
   color: white;
   font-size: 20px;
 }
-.backhome:hover{
-  color: #135882;
-}
 .admin-order_header{
   font-size: 70px;
   font-weight: 700;
@@ -254,8 +251,7 @@ ul li {
   text-align: center;
 }
 .all-orders{
-  margin-left: 2.5vw;
-  width: 95vw;
+  width: 100vw;
   height: 80px;
 }
 .admin-order_header-content{
@@ -265,9 +261,10 @@ ul li {
   color: white;
   background-color: #1d86c7;
   text-align: center;
-  height: 50px;
+  height: 80px;
   display: grid;
-  grid-template-columns: 10% 20% 12.5% 25% 8% 12% 12.5%;
+  grid-template-columns: 20% 10% 12.5% 25% 8% 12% 12.5%;
+
   /* vertical-align: center; */
   /* margin: auto auto; */
 }
@@ -275,16 +272,19 @@ ul li {
   overflow: hidden;
   border-right: 1px solid black;
   height: 100%;
+  padding-top: 30px;
   justify-items: center;
 
 }
 .admin-order_info{
-  border: 1px solid grey;
+  border: 2px solid grey;
+  font-size: 15px;
   border-top: none;
   height: 40px;
   text-align: center;
   display: grid;
-  grid-template-columns: 10% 20% 12.5% 25% 8% 12% 12.5%;
+  grid-template-columns: 20% 10% 12.5% 25% 8% 12% 12.5%;
+  align-content: space-around;
 }
 .admin-order_properties{
   height: 100%;
@@ -303,13 +303,12 @@ ul li {
 }
 .backhome{
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 20px;
 }
 .backhome:hover{
   color: #135882;
 }
-
 .header-add-product-admin{
   font-size: 40px;
   text-align: center;
@@ -372,7 +371,7 @@ ul li {
 }
 .backhome{
   text-decoration: none;
-  color: white;
+  color: black;
 }
 .backhome:hover{
   color: #135882;
@@ -431,3 +430,291 @@ ul li {
     margin: 0px;
   }
 }
+
+.add-product-input {
+  margin-top: 10px;
+}
+
+/* profile */
+
+
+.profile-user{
+  display: flex;
+  align-items: center;
+}
+.profile-gallary{
+  border: 1px solid black;
+  width: 50vh;
+  height: 50vh;
+  border-radius: 1px;
+  margin: 50px;
+}
+.profile-gallary > img{
+  width: 100%;
+  height: 100%;
+}
+.profile-detail{
+  margin: 50px ;
+  width:  60%;
+}
+.detail-name{
+  display: flex;
+}
+.first-name{
+  display: flex;
+  width: 40%;
+  margin-bottom: 20px;
+}
+.first-name > span{
+  padding: 10px;
+  width: 50%;
+  font-size: 20px;
+}
+.first-name >p, .last-name > p,.detail-privilege > p, .detail-email>p, .detail-password>p{
+  width: 120px;
+  padding: 10px;
+  font-size: 20px;
+}
+.last-name{
+  display: flex;
+  margin-left: 5vh;
+  width: 50%;
+  margin-bottom: 20px;
+}
+.last-name > span{
+  padding: 10px;
+  width: 75%;
+  font-size: 20px;
+}
+.detail-privilege{
+  display: flex;
+  padding-top: 25px ;
+  border-top: solid 1px;
+  margin-bottom: 25px;
+}
+.detail-privilege > span{
+  padding: 10px;
+  width: 80%;
+  font-size: 20px;
+}
+.detail-email{
+  display: flex;
+  padding-top: 25px ;
+  border-top: solid 1px;
+  margin-bottom: 25px;
+}
+.detail-email> span{
+  padding: 10px;
+  width: 80%;
+  border-radius: 2px;
+  font-size: 20px;
+}
+.detail-password{
+  display: flex;
+  padding-top: 25px ;
+  border-top: solid 1px;
+  margin-bottom: 25px;
+}
+.detail-password > span{
+  padding: 10px;
+  width: 80%;
+  font-size: 20px;
+}
+.profile-button{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+.profile-button_edit, .profile-button_delete{
+  width: 30vh;
+  height: 10vh;
+  border: solid 1px;
+  background-color: red;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  text-align: center;
+  padding: 3vh;
+  border-radius: 3px;
+  margin: 0 50px;
+}
+.profile-button_edit:hover , .profile-button_delete:hover{
+  background-color: white;
+  border: solid 1px red;
+  color: black;
+
+}
+@media screen and (max-width: 1023px) {
+  .profile-user{
+    display:block;
+  }
+  .profile-gallary{
+    width: 90%;
+    height: 90%;
+    margin: 50px auto;
+  }
+  .profile-detail{
+    margin: 10px auto;
+    width: 90%;
+  }
+  .detail-name{
+    display: block;
+  }
+  .first-name{
+    width: 100%;
+  }
+  .first-name > span{
+    width: 60%;
+  }
+  .last-name {
+    margin-left: 0;
+    width: 100%;
+    border-top: solid 1px;
+    padding-top: 25px;
+    margin-bottom: 25px;
+  }
+  .last-name > span{
+    width: 60%;
+  }
+  .profile-button_edit, .profile-button_delete{
+    margin: 2px;
+  }
+  .detail-privilege > span , .detail-email> span, .detail-password > span{
+    width: 60%;
+  }
+}
+/*user */
+.user-title{
+  text-align: center;
+  font-size: 30px;
+}
+.admin-title{
+  border: solid 1px;
+  padding: 10px 10px;
+  background-color: aliceblue;
+  font-size: 25px;
+  margin: 10px 0;
+}
+.add-profile_admin > a ,.add-profile_customer>a{
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.add-profile_admin ,.add-profile_customer{
+  border: solid 1px white;
+  width: 30vh;
+  height: 5vh;
+  font-size: 20px;
+  margin-left: 10px;
+  background-color: red;
+}
+.add-profile_admin-title, .add-profile_customer-title{
+  margin-left: 10px;
+}
+.add-profile_admin:hover ,.add-profile_customer:hover{
+  background-color: aliceblue;
+  border: solid 1px red;
+}
+.add-profile_admin > a:hover, .add-profile_customer > a:hover{
+  color: black
+}
+.admin-list{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 20px;
+  padding: 10px;
+}
+.admin-content{
+  border: solid 1px rgb(178, 178, 178);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 1px;
+}
+.admin-content > a, .customer-content >a{
+  text-decoration: none;
+  color: black;
+}
+.admin-content:hover, .customer-content:hover{
+  border: solid 1px ;
+}
+.admin-img ,.customer-img{
+  width: 100%;
+  height: 75%;
+}
+.admin-name{
+  font-size: 18px;
+  margin-top: 20px;
+}
+.customer-name{
+  font-size: 18px;
+  margin: 5px 0;
+}
+.customer-list{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 20px;
+  padding: 10px;
+}
+.customer-title{
+  border: solid 1px;
+  padding: 10px 10px;
+  background-color: aliceblue;
+  font-size: 25px;
+  margin: 10px 0;
+}
+.customer-content{
+  border: solid 1px rgb(178, 178, 178);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.customer-email{
+  margin-bottom: 3px;
+}
+@media screen and (max-width: 1023px){
+  .user-title{
+    font-size: 25px;
+  }
+  .admin-list ,.customer-list {
+    grid-template-columns: repeat(3,1fr);
+  }
+  .admin-img {
+    width: 100%;
+    height: 70%;
+
+  }
+  .customer-img{
+    width: 100%;
+    height: 70%;
+  }
+  .admin-name ,.customer-name{
+    font-size: 20px;
+    margin: 5px 0;
+  }
+  .customer-email{
+    font-size: 20px;
+    margin-top: 5px;
+  }
+}
+@media screen and (max-width: 719px){
+  .user-title{
+    font-size: 20px;
+  }
+  .admin-list ,.customer-list {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .admin-name ,.customer-name{
+    font-size: 11px;
+    margin: 4px 0 1px;
+  }
+  .customer-email{
+    font-size: 12px;
+  }
+}
+

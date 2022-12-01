@@ -2,15 +2,24 @@ extends base_admin
 
 block content
     .backchome-products
-        a.backhome(href='/dpql-ecommerce/client/web/admin-pannel/page/pannel.html') Quay l&#x1EA1;i trang ch&#x1EE7;
-      div
+        a.backhome(href='/admin') Quay l&#x1EA1;i trang ch&#x1EE7;
         p.admin-order_header Orders
     .all-orders
-      .admin-order_header-content
-        p.admin-order_content M&Atilde; &Dstrok;H
-        p.admin-order_content T&ecirc;n KH
-        p.admin-order_content T&igrave;nh Tr&#x1EA1;ng
-        p.admin-order_content &Dstrok;&#x1ECB;a ch&#x1EC9;
-        p.admin-order_content SL SP
-        p.admin-order_content T&#x1ED5;ng Ti&#x1EC1;n
-        p.admin-order_content Ghi Ch&uacute;
+        .admin-order_header-content
+            p.admin-order_content M&Atilde; &Dstrok;H
+            p.admin-order_content T&ecirc;n KH
+            p.admin-order_content T&igrave;nh Tr&#x1EA1;ng
+            p.admin-order_content &Dstrok;&#x1ECB;a ch&#x1EC9;
+            p.admin-order_content SL SP
+            p.admin-order_content T&#x1ED5;ng Ti&#x1EC1;n
+            p.admin-order_content Ghi Ch&uacute;
+    each order in listOrder
+        .admin-order_info
+            p.admin-order_properties=order.productOrder
+            p.admin-order_properties=order.fullName
+            p.admin-order_properties=order.status
+            p.admin-order_properties=order.address
+            p.admin-order_properties=order.quantity
+            p.admin-order_properties=order.totalMoney
+            p.admin-order_properties không có ghi chú
+

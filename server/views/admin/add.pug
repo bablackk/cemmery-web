@@ -1,36 +1,34 @@
 extends base_admin
 
 block content
-
     .backchome-products
-        a.backhome(href='/dpql-ecommerce/client/web/admin-pannel/page/pannel.html') Quay l&#x1EA1;i trang ch&#x1EE7;
+        a.backhome(href='/admin/products') Quay l&#x1EA1;i trang ch&#x1EE7;
     .add-products
         p.header-add-product-admin CEMMERY
         p.title-add-product /Add Products/
-    .main-content-add
+    form.main-content-add(action="/admin/product/add" method='POST')
         fieldset.add-content-product
             legend Th&ocirc;ng tin s&#x1EA3;n ph&#x1EA9;m
             p
-                span.content-add &#x1EA2;nh tr&#x1B0;&#x1EDB;c:
-                input.add-product-input(type='file')
+                span.content-add Tên Sản phẩm:
+                input.add-product-input(type='text' name='productName')
             p
-                span.content-add &#x1EA2;nh sau:
-                input.add-product-input(type='file')
+                span.content-add Giá:
+                input.add-product-input(type='text' name='price')
             p
-                span.content-add T&ecirc;n s&#x1EA3;n ph&#x1EA9;m:
-                input.add-product-input(type='text')
+                span.content-add Ảnh trước:
+                input.add-product-input(type='text' name='thumbnail')
             p
-                span.content-add Lo&#x1EA1;i s&#x1EA3;n ph&#x1EA9;m
-                select(name='' id='')
-                    option(value='') Tops
-                    option(value='') Bottom
-                    option(value='') Outerwear
+                span.content-add Ảnh Sau:
+                input.add-product-input(type='text' name='thumbnailAfter')
             p
-                span.content-add Gi&aacute;:
-                input.add-product-input(type='number' min='0')
+                label.content-add(for='type') Loại sản phẩm:
+                select(name='productType' id='type')
+                    option(value='Tops') Tops
+                    option(value='Bottom') Bottom
+                    option(value='Outerwear') Outerwear
             p
                 span.content-add M&ocirc; t&#x1EA3;:
-                textarea.add-product-input(type='text')
+                textarea.add-product-input(name='description')
             .add-product-btn-admin
-                button.add-product-btn(type='reset') Reset
-                button.add-product-btn(type='submit') Save
+                button.add-product-btn(type='submit' style='margin-left: 90%') Save

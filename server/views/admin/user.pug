@@ -1,0 +1,33 @@
+extends base_admin
+
+block content
+    .all-user
+        .backhome-products
+            a.backhome(href='/admin') Quay l&#x1EA1;i trang ch&#x1EE7;
+        .user-title
+            h1 All User
+        .user-admin
+            .admin-title
+                i.fa-solid.fa-user-gear
+                span Admin
+            .admin-list
+                each admin in admins
+                    .admin-content
+                        a(href=`/admin/profile/${admin.id}`)
+                            img.admin-img(src='	https://www.pngitem.com/pimgs/m/128-1280822_check-mark-box-clip-art-blue-admin-icon.png' alt='')
+                            p.admin-name=admin.firstname +' '+ admin.lastname
+        .user-customer
+            .customer-title
+                i.fa-solid.fa-user
+                span Kh&aacute;ch h&agrave;ng
+            .customer_add-profile
+                a(href='')
+                    p.add-profile_customer-title Th&ecirc;m kh&aacute;ch h&agrave;ng
+            .customer-list
+                each user in users
+                    .customer-content
+                        a(href=`/admin/profile/${user.id}`)
+                            img.customer-img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnezSHdsj3jQ66txYNJvBVtzerQFn9RMvsmyJe-nsrh61zNsuHuZ54hua6gwgDXoy4I8c&usqp=CAU' alt='')
+                            p.customer-name=user.firstname + ' ' + user.lastname
+                            span.customer-email=user.email
+                        
