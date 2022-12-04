@@ -322,6 +322,7 @@ a {
     align-items: center;
     z-index: 999;
     width: 100vw;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 .nav {
   width: 70vw;
@@ -1252,8 +1253,8 @@ font-weight: bold;
   font-size: 15px;
   font-weight: bold;
   color : white;
-  margin : 10px auto;
-  padding : 7px 10px;
+  width: 5vw;
+  height: 2vh;
 }
 
 .update-mini-cart {
