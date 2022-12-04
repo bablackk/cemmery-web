@@ -35,7 +35,11 @@ const orderSchema = new mongoose.Schema(
       type: Number,
     },
     totalMoney: {
+      type: Number,
+    },
+    status: {
       type: String,
+      default: "Chưa xác nhận",
     },
   },
   { timestamps: true }

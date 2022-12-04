@@ -213,4 +213,59 @@ module.exports = {
       title: "Thanks",
     });
   },
+  renderProduct: async (req, res) => {
+    const products = await Product.find();
+    return res.status(200).render("admin/product", {
+      title: "Admin Products",
+      products,
+    });
+  },
+  renderPageAddProduct: async (req, res) => {
+    return res.status(200).render("admin/add", {
+      title: "Add Product",
+    });
+  },
+  AdminAddProducts: async (req, res) => {
+    const newProduct = await new Product({
+      productName: req.body.productName,
+      price: req.body.price,
+      thumbnail: req.body.thumbnail,
+      thumbnailAfter: req.body.thumbnailAfter,
+      size: req.body.size,
+      description: req.body.description,
+    });
+    const product = await newProduct.save();
+    return res.status(200).redirect("/admin");
+  },
+  AdminProfile: async (req, res) => {
+    const user = await User.findById(req.params.id);
+    res.status(200).render("admin/profile", {
+      title: "Profile Admin",
+      user,
+    });
+  },
+  AllUser: async (req, res) => {
+    const users = await User.find({ admin: false });
+    const admins = await User.find({ admin: true });
+    return res.status(200).render("admin/user", {
+      title: "Admin User",
+      users,
+      admins,
+    });
+  },
+  AdminOrder: async (req, res) => {
+    const orders = await Order.find();
+    return res.status(200).render("admin/order", {
+      title: "Admin",
+      listOrder: orders,
+    });
+  },
+  // deleteUser: async (req, res) => {
+  //   try {
+  //     const deleteUser = await User.findByIdAndDelete(req.params.id);
+  //     return res.status(200).redirect("/admin/users");
+  //   } catch (error) {
+  //     return res.status(500).json(error);
+  //   }
+  // },
 };

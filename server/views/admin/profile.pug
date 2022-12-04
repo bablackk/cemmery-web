@@ -1,0 +1,27 @@
+extends base_admin
+
+block content
+    .profile-container
+        .backhome-products
+            a.backhome(href='/admin') Quay l&#x1EA1;i trang ch&#x1EE7;
+        .profile-user
+            .profile-gallary
+                img(src='	https://www.pngitem.com/pimgs/m/128-1280822_check-mark-box-clip-art-blue-admin-icon.png' alt='')
+            .profile-detail
+                .detail-name
+                    .first-name
+                        p H&#x1ECD;: 
+                        span=user.firstname
+                    .last-name
+                        p T&ecirc;n: 
+                        span=user.lastname
+                .detail-privilege
+                    p Vai tr&ograve;: 
+                    span Admin
+                .detail-email
+                    p Email:
+                    span=user.email
+        .profile-button
+            a.profile-button_edit(href='') Ch&#x1EC9;nh s&#x1EED;a
+            a.profile-button_delete(href=`/api/admin/user/${user.id}` type='submit') Xo&aacute;
+    

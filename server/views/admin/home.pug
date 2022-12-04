@@ -4,38 +4,43 @@ block content
     .body
         .body-left
             ul.menu
-                li.menu-item
-                    i.bi.bi-speedometer2
-                    |  Dashboard
-                li.menu-item
-                    i.bi.bi-list-task
-                    | Product
-                li.menu-item
-                    i.bi.bi-cart-check
-                    |  Order
-                li.menu-item
-                    i.bi.bi-person-circle
-                    | Profile
-                li.menu-item
-                    i.bi.bi-box-arrow-left
-                    | Logout
+                a(href='/admin')
+                    li.menu-item
+                        i.bi.bi-speedometer2
+                        |  Dashboard
+                a(href='/admin/products')
+                    li.menu-item
+                        i.bi.bi-list-task
+                        | Product
+                a(href='/admin/orders')
+                    li.menu-item
+                        i.bi.bi-cart-check
+                        |  Order
+                a(href='/admin/profile')
+                    li.menu-item
+                        i.bi.bi-person-circle
+                        | Profile
+                a(href='/logout')
+                    li.menu-item
+                        i.bi.bi-box-arrow-left
+                        | Logout
         .body-right
             .notify
                 h1 Welcome to Dashboard
             .shower
-                .shower-item
+                a.shower-item(href='/admin/products')
                     p
                     i.bi.bi-list-ul
                     |  All Product
-                .shower-item
+                a.shower-item(href='/admin/users')
                     p
                     i.bi.bi-people
                     |  All User
-                .shower-item
+                a.shower-item(href='/admin/orders')
                     p
                     i.bi.bi-cart-check
                     | All Order
-                .shower-item
+                a.shower-item(href='/admin/profile')
                     p
                     i.bi.bi-person-circle
                     | Your profile
